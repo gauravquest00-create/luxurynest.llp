@@ -1,0 +1,88 @@
+.property-info {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.property-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1e3a8a;
+  margin-bottom: 0.25rem;
+}
+
+.property-society {
+  font-size: 1rem;
+  color: #f97316;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.property-location {
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.property-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+  background: #f9fafb;
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+.info-grid div {
+  font-size: 0.9rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 1rem 0 0.5rem;
+  color: #1e3a8a;
+}
+
+.description {
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.amenities-list, .features-list, .nearby-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+.amenities-list li, .features-list li {
+  background: #e0e7ff;
+  color: #1e3a8a;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.nearby-list li {
+  width: 100%;
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .property-title {
+    font-size: 1.4rem;
+  }
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}

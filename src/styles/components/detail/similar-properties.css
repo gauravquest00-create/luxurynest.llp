@@ -1,0 +1,48 @@
+.similar-properties {
+  margin-top: 2rem;
+}
+
+.similar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.similar-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.similar-card:hover {
+  transform: translateY(-4px);
+}
+
+.similar-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.similar-info {
+  padding: 0.75rem;
+}
+
+.similar-info h4 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.similar-info p {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.similar-price {
+  font-weight: bold;
+  color: #1e3a8a;
+}

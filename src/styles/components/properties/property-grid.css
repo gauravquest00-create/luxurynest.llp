@@ -1,0 +1,13 @@
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  background: #f9fafb;
+  border-radius: 16px;
+  color: #6b7280;
+}

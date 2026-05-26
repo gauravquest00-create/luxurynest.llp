@@ -1,0 +1,77 @@
+/* src/App.css – Global responsive styles & layout fixes */
+
+/* Reset & base – prevents x-axis overflow */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background-color: #ffffff;
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+/* Main content wrapper (used in App.jsx) */
+.main-content {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  min-height: calc(100vh - 160px); /* leaves space for navbar + footer */
+}
+
+/* All media should fit within their containers */
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility container – prevents overflow */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  overflow-x: hidden;
+}
+
+/* Prevent any child from causing horizontal scroll */
+#root * {
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+/* Smooth scrolling (optional) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Touch‑friendly focus outline */
+:focus {
+  outline: 2px solid #f97316;
+  outline-offset: 2px;
+}
+
+/* Responsive adjustment for very small screens */
+@media (max-width: 640px) {
+  .main-content {
+    min-height: calc(100vh - 140px);
+  }
+}

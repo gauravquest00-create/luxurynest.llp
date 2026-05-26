@@ -1,0 +1,68 @@
+.owner-profile {
+  padding: 2rem 1rem;
+  background-color: #f9fafb;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.8s ease;
+}
+
+.owner-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .owner-container {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.owner-image-wrapper {
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.owner-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.owner-image:hover {
+  transform: scale(1.05);
+}
+
+.owner-info {
+  padding: 1rem;
+}
+
+.owner-name {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+}
+
+.owner-role {
+  color: #f97316;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.owner-bio,
+.owner-bio-secondary {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

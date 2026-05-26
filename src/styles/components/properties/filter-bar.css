@@ -1,0 +1,152 @@
+.filter-bar-wrapper {
+  position: sticky;
+  top: 70px;
+  z-index: 40;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: white;
+  border-radius: 12px;
+}
+
+.filter-bar-inputs {
+  display: flex;
+  flex: 1;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 2;
+  min-width: 180px;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  font-size: 0.9rem;
+}
+
+.filter-toggle, .sort-toggle {
+  background: #f0f0f0;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.filter-toggle.active {
+  background: #1e3a8a;
+  color: white;
+}
+
+.sort-dropdown {
+  position: relative;
+}
+
+.sort-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 200px;
+  z-index: 100;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+.sort-option {
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sort-option:hover, .sort-option.active {
+  background: #f0f0f0;
+}
+
+.reset-btn {
+  background: #6b7280;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.filter-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.2s;
+  background: #f9fafb;
+  border-radius: 0 0 12px 12px;
+}
+
+.filter-panel.open {
+  max-height: 500px;
+  padding: 1rem;
+}
+
+.filter-group {
+  margin-bottom: 1rem;
+}
+
+.filter-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.filter-group select,
+.filter-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Desktop: show filter panel always and sticky bar inline */
+@media (min-width: 768px) {
+  .filter-bar-wrapper {
+    position: sticky;
+    top: 70px;
+  }
+  .filter-toggle {
+    display: none;
+  }
+  .filter-panel {
+    max-height: none;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  .filter-group {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .filter-bar-inputs {
+    width: 100%;
+  }
+  .search-input {
+    width: 100%;
+  }
+  .reset-btn {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}

@@ -1,0 +1,11 @@
+.map-embed {
+  margin-top: 2rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.map-embed h3 {
+  margin-top: 0;
+}

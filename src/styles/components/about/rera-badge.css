@@ -1,0 +1,47 @@
+.rera-badge {
+  background: linear-gradient(120deg, #fff7ed, #ffedd5);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border-left: 6px solid #f97316;
+  transition: all 0.3s ease;
+  animation: slideIn 0.5s ease;
+}
+
+.rera-badge:hover {
+  transform: translateX(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.rera-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.rera-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.rera-text {
+  font-size: 1rem;
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+}
+
+.rera-disclaimer {
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

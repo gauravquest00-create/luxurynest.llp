@@ -1,0 +1,34 @@
+.property-detail-page {
+  background-color: #f9fafb;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.detail-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .detail-container {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.not-found {
+  text-align: center;
+  padding: 4rem;
+}
+
+.not-found button {
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
