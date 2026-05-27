@@ -1,0 +1,76 @@
+// src/data/siteConfig.js
+const siteConfig = {
+  businessName: "LuxuryNest",
+
+  tagline: "Your Property, Our Priority",
+
+  description:
+    "LuxuryNest is Gurugram’s trusted real estate agency, helping families find their perfect home with verified listings and expert guidance.",
+
+  rera: "RERA/GM/2024/387/33",
+
+  address: "D-43, Sector XX, Gurugram, Haryana 122001, India",
+
+  phone: "+919650796186 ",
+  phoneDisplay: "+91 9650796186 & 919667435358",
+
+  whatsapp: "919667435358", // IMPORTANT: no + or spaces (for wa.me)
+
+  email: "luxurynest.llp@gmail.com",
+
+  hours: "Tuesday – Monday: 10:00 AM – 7:00 PM",
+
+  experience: "4 Years",
+  familiesServed: "200+",
+  propertiesListed: "100+",
+  satisfaction: "98%",
+
+  social: {
+    instagram: "https://instagram.com/luxurynest.llp",
+    facebook: "https://facebook.com/luxurynest.llp",
+    youtube: "https://youtube.com/@luxurynest.llp",
+    twitter: "https://twitter.com/luxurynest.llp",
+  },
+
+  colors: {
+    primary: "#1F3556",      // Navy Blue
+    secondary: "#243A5E",    // Card BG
+    accent: "#D4AF37",       // Gold
+    text: "#FFFFFF",
+    subtext: "#AAB3C5",
+  },
+
+  seo: {
+    title: "LuxuryNest — Buy & Rent Flats in Gurugram",
+    description:
+      "Buy or rent flats, houses & shops in Gurugram. 200+ families served. Verified properties. Call +91 96507 96186.",
+    keywords:
+      "property in gurugram, flats in gurgaon, buy flat gurugram, rent flat gurugram, 2bhk gurugram, 3bhk gurugram, LuxuryNest",
+    ogImage: "/assets/og-image.jpg",
+  },
+
+  mapEmbedUrl:
+    "https://www.google.com/maps?q=28.5921,77.0499&z=15&output=embed",
+
+  whatsappMessage:
+    "Hi, I found your website and I'm interested in a property. Can you help me?",
+
+  // ✨ New fields for the LuxuryNest project
+  logo: "public/logo.jpeg",  // place a logo.png in public/ folder
+
+  cta: {
+    primary: "Explore Properties",
+    secondary: "Contact Owner",
+  },
+
+  pagination: {
+    perPage: 10,
+  },
+
+  defaults: {
+    city: "Gurugram",
+    currency: "INR",
+  },
+};
+
+export default siteConfig;

@@ -93,8 +93,10 @@ export default function FilterBar({ onFilterChange, initialFilters }) {
           <label>Property Type</label>
           <select value={filters.type} onChange={(e) => handleChange('type', e.target.value)}>
             <option value="all">All</option>
-            <option value="sale">For Sale</option>
+            <option value="sale">For Resale</option>
             <option value="rent">For Rent</option>
+            <option value="sale">For Builder floor</option>
+            <option value="rent">For Plot</option>
           </select>
         </div>
         <div className="filter-group">

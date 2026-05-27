@@ -7,13 +7,13 @@ export default function HeroBanner() {
   return (
     <section className="hero-banner">
       <div className="hero-container">
-        <h1 className="hero-title">Find Your Dream Home in Dwarka</h1>
+        <h1 className="hero-title">{siteConfig.tagline}</h1>
         <p className="hero-description">{siteConfig.description}</p>
         <button 
           className="hero-btn"
           onClick={() => navigate('/properties')}
         >
-          Explore Properties
+          {siteConfig.cta?.primary || "Explore Properties"}
         </button>
         <div className="hero-stats">
           <div className="stat">

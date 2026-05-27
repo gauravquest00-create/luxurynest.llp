@@ -20,7 +20,6 @@ export default function Navbar() {
     return location.pathname.startsWith(path);
   };
 
-  // Add scroll listener for background effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -33,9 +32,9 @@ export default function Navbar() {
     <>
       <nav
         style={{
-          backgroundColor: scrolled ? "rgba(255, 255, 255, 0.95)" : "white",
+          backgroundColor: scrolled ? "rgba(31, 53, 86, 0.95)" : "#1F3556",
           backdropFilter: scrolled ? "blur(8px)" : "none",
-          boxShadow: scrolled ? "0 4px 12px rgba(0,0,0,0.08)" : "0 1px 2px rgba(0,0,0,0.05)",
+          boxShadow: scrolled ? "0 4px 12px rgba(0,0,0,0.08)" : "none",
           position: "sticky",
           top: 0,
           zIndex: 50,
@@ -58,31 +57,27 @@ export default function Navbar() {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "0.5rem",
+              gap: "0.75rem",
               textDecoration: "none",
             }}
           >
-            <div
-              style={{
-                backgroundColor: "#1a56db",
-                color: "white",
-                fontWeight: "bold",
-                fontSize: "0.875rem",
-                padding: "0.5rem 0.75rem",
-                borderRadius: "0.5rem",
-                transition: "transform 0.2s",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-              onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-            >
-              GA
-            </div>
+            {siteConfig.logo && (
+              <img
+                src={siteConfig.logo}
+                alt={siteConfig.businessName}
+                style={{
+                  height: "45px",
+                  width: "auto",
+                  objectFit: "contain",
+                }}
+              />
+            )}
             <div>
               <p
                 style={{
                   fontWeight: "bold",
                   fontSize: "1rem",
-                  color: "#1e3a8a",
+                  color: "#FFFFFF",
                   margin: 0,
                   lineHeight: 1.25,
                 }}
@@ -91,7 +86,7 @@ export default function Navbar() {
               </p>
               <p
                 style={{
-                  color: "#9ca3af",
+                  color: "#D4AF37",
                   fontSize: "0.75rem",
                   margin: 0,
                   lineHeight: 1.25,
@@ -118,8 +113,8 @@ export default function Navbar() {
                   fontSize: "0.875rem",
                   fontWeight: 500,
                   textDecoration: "none",
-                  color: isActive(link.path) ? "#1a56db" : "#4b5563",
-                  borderBottom: isActive(link.path) ? "2px solid #1a56db" : "none",
+                  color: isActive(link.path) ? "#D4AF37" : "#F0F4F8",
+                  borderBottom: isActive(link.path) ? "2px solid #D4AF37" : "none",
                   paddingBottom: "0.125rem",
                   transition: "color 0.2s, border-bottom 0.2s",
                 }}
@@ -136,8 +131,8 @@ export default function Navbar() {
               display: "none",
               alignItems: "center",
               gap: "0.5rem",
-              backgroundColor: "#1a56db",
-              color: "white",
+              backgroundColor: "#D4AF37",
+              color: "#1F3556",
               fontSize: "0.875rem",
               fontWeight: 500,
               padding: "0.5rem 1rem",
@@ -147,11 +142,11 @@ export default function Navbar() {
             }}
             className="call-btn"
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#1e3a8a";
+              e.currentTarget.style.backgroundColor = "#B8962C";
               e.currentTarget.style.transform = "scale(1.02)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "#1a56db";
+              e.currentTarget.style.backgroundColor = "#D4AF37";
               e.currentTarget.style.transform = "scale(1)";
             }}
           >
@@ -167,7 +162,7 @@ export default function Navbar() {
               background: "none",
               border: "none",
               cursor: "pointer",
-              color: "#4b5563",
+              color: "#FFFFFF",
               transition: "color 0.2s",
             }}
             className="menu-toggle"
@@ -177,12 +172,12 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Dropdown Menu – with smooth slide animation */}
+        {/* Mobile Dropdown Menu */}
         <div
           className={`mobile-menu ${menuOpen ? "open" : ""}`}
           style={{
-            backgroundColor: "white",
-            borderTop: "1px solid #f3f4f6",
+            backgroundColor: "#1F3556",
+            borderTop: "1px solid rgba(255,255,255,0.1)",
             padding: menuOpen ? "1rem" : "0 1rem",
             display: "flex",
             flexDirection: "column",
@@ -204,8 +199,8 @@ export default function Navbar() {
                 fontSize: "0.875rem",
                 fontWeight: 500,
                 textDecoration: "none",
-                backgroundColor: isActive(link.path) ? "#eff6ff" : "transparent",
-                color: isActive(link.path) ? "#1a56db" : "#4b5563",
+                backgroundColor: isActive(link.path) ? "#D4AF37" : "transparent",
+                color: isActive(link.path) ? "#1F3556" : "#FFFFFF",
                 transition: "background-color 0.2s",
               }}
             >
@@ -218,8 +213,8 @@ export default function Navbar() {
               display: "flex",
               alignItems: "center",
               gap: "0.5rem",
-              backgroundColor: "#1a56db",
-              color: "white",
+              backgroundColor: "#D4AF37",
+              color: "#1F3556",
               fontSize: "0.875rem",
               fontWeight: 500,
               padding: "0.5rem 0.75rem",
@@ -228,8 +223,8 @@ export default function Navbar() {
               marginTop: "0.5rem",
               transition: "background-color 0.2s",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#1e3a8a")}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1a56db")}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#B8962C")}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#D4AF37")}
           >
             <Phone size={15} />
             {siteConfig.phoneDisplay}

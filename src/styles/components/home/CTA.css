@@ -1,0 +1,128 @@
+/* CTA Section – Navy + Gold Theme */
+.cta-section {
+  background: linear-gradient(135deg, #1F3556 0%, #14243D 100%);
+  padding: 4rem 1rem;
+  text-align: center;
+  color: white;
+}
+
+.cta-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #D4AF37; /* Gold */
+}
+
+.cta-section p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #e0e7ff;
+}
+
+.cta-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cta-form input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.cta-form input::placeholder {
+  color: #a0aec0;
+}
+
+.cta-form input:focus {
+  outline: none;
+  border-color: #D4AF37;
+  background: rgba(255,255,255,0.2);
+}
+
+.cta-form button {
+  background: #D4AF37;
+  color: #1F3556;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1rem;
+}
+
+.cta-form button:hover {
+  background: #B8962C;
+  transform: translateY(-2px);
+}
+
+.cta-error {
+  color: #f87171;
+  font-size: 0.85rem;
+  margin-top: -0.5rem;
+}
+
+.cta-note {
+  font-size: 0.75rem;
+  color: #a0aec0;
+  margin-top: 0.5rem;
+}
+
+/* Thank You state */
+.cta-section.thank-you {
+  background: #1F3556;
+}
+
+.thank-you-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.thank-you-details {
+  background: rgba(255,255,255,0.1);
+  padding: 1rem;
+  border-radius: 16px;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.thank-you-details p {
+  margin: 0.25rem 0;
+}
+
+.cta-reset {
+  background: #D4AF37;
+  color: #1F3556;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 40px;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.cta-reset:hover {
+  background: #B8962C;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .cta-section h2 {
+    font-size: 1.5rem;
+  }
+  .cta-form input, .cta-form button {
+    padding: 0.6rem;
+  }
+}

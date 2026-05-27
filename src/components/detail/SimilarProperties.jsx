@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import allProperties from '../../data/properties';
-
-export default function SimilarProperties({ currentProperty }) {
+import { slugify } from '../../utils/slugify';export default function SimilarProperties({ currentProperty }) {
   const similar = allProperties
     .filter(p => p.id !== currentProperty.id && (p.location === currentProperty.location || p.bhk === currentProperty.bhk))
     .slice(0, 3);
@@ -12,7 +11,7 @@ export default function SimilarProperties({ currentProperty }) {
       <h3>Similar Properties</h3>
       <div className="similar-grid">
         {similar.map(p => (
-          <Link to={`/properties/${p.id}`} key={p.id} className="similar-card">
+          <Link to={`/properties/${slugify(p.title)}`} key={p.id} className="similar-card">
             <img src={p.image} alt={p.title} />
             <div className="similar-info">
               <h4>{p.title}</h4>

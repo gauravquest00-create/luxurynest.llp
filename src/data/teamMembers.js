@@ -1,28 +1,28 @@
 const teamMembers = [
   {
     id: 1,
-    name: "Gaurav",
-    role: "Founder & CEO",
-    experience: "12 Years",
-    rera: "RERA/DL/2024/387/33",
-    phone: "1234567899",
-    avatar: "GV",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format",
+    name: "Sandeep Goyal",
+    role: "Founder & Senior Property Advisor",
+    experience: "4 Years",
+    rera: "RERA/GM/2024/387/34",
+    phone: "919650796186",
+    avatar: "SG",
+    image: "public/abhishek.jpeg",
 
 
-    bio: "With 12 years of experience in Delhi real estate, Gaurav has helped 500+ families find their dream homes in Dwarka and surrounding areas.",
+    bio: "With 4 years of experience in Gurugram real estate, Sandeep Goyal has helped 200+ families find their dream homes in Gurugram and surrounding areas.",
   },
 
   {
     id: 2,
-    name: "Gopendra",
-    role: "Senior Property Advisor",
-    experience: "6 Years",
-    rera: "RERA/DL/2024/387/34",
-    phone: "1234567888",
-    avatar: "GSN",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format",
-    bio: "Gopendra specializes in residential rentals and first-time homebuyer guidance, ensuring every client finds the right home at the right price.",
+    name: "Abhishek Rastogi",
+    role: "Founder & Senior Property Advisor",
+    experience: "3 Years",
+    rera: "RERA/GM/2024/387/34",
+    phone: "919667435358",
+    avatar: "AR",
+    image: "public/abhishek.jpeg",
+    bio: "Abhishek specializes in residential and first-time homebuyer guidance, ensuring every client finds the right home at the right price.",
   },
 
 ]

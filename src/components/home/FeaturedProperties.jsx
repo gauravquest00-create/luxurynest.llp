@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import properties from '../../data/properties';
+import { slugify } from '../../utils/slugify';
+// import './FeaturedProperties.css';
 
 export default function FeaturedProperties() {
+  // Take first 3 properties as featured
   const featured = properties.slice(0, 3);
 
   const formatPrice = (priceNum, priceStr) => {
@@ -21,20 +24,22 @@ export default function FeaturedProperties() {
         <h2 className="section-title">Featured Properties</h2>
         <p className="section-subtitle">Handpicked properties just for you</p>
         <div className="featured-grid">
-          {featured.map((property) => (
-            <div key={property.id} className="property-card">
-              <img src={property.image} alt={property.title} className="property-img" />
-              {property.badge && <span className="property-badge">{property.badge}</span>}
+          {featured.map((prop) => (   // ✅ changed from 'property' to 'prop' to avoid confusion
+            <div key={prop.id} className="property-card">
+              <img src={prop.image} alt={prop.title} className="property-img" />
+              {prop.badge && <span className="property-badge">{prop.badge}</span>}
               <div className="property-info">
-                <h3 className="property-title">{property.title}</h3>
-                <p className="property-location">{property.location}</p>
-                <p className="property-price">{formatPrice(property.priceNum, property.price)}</p>
+                <h3 className="property-title">{prop.title}</h3>
+                <p className="property-location">{prop.location}</p>
+                <p className="property-price">{formatPrice(prop.priceNum, prop.price)}</p>
                 <div className="property-meta">
-                  <span>{property.bhk} BHK</span>
-                  {property.area && <span>• {property.area} sqft</span>}
-                  <span>• {property.type === 'rent' ? 'For Rent' : 'For Sale'}</span>
+                  <span>{prop.bhk} BHK</span>
+                  {prop.area && <span>• {prop.area} sqft</span>}
+                  <span>• {prop.type === 'rent' ? 'For Rent' : 'For Sale'}</span>
                 </div>
-                <Link to={`/properties/${property.id}`} className="view-link">View Details →</Link>
+                <Link to={`/properties/${slugify(prop.title)}`} className="view-link">
+                  View Details →
+                </Link>
               </div>
             </div>
           ))}

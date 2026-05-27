@@ -6,7 +6,7 @@ export default function AnimatedLoader() {
     <div className="animated-loader">
       <div className="loader-content">
         <div className="loader-logo">
-          <span className="logo-text">GA</span>
+          <span className="logo-text">LN</span>
         </div>
         <h3 className="loader-name">{siteConfig.businessName}</h3>
         <div className="loader-dots">

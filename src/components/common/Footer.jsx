@@ -13,8 +13,11 @@ const quickLinks = [
 const propertyLinks = [
   { label: "Flats for Sale", path: "/properties?type=sale" },
   { label: "Flats for Rent", path: "/properties?type=rent" },
+  { label: "Plot", path: "/properties?type=plot" },
+  { label: "Builder Floor", path: "/properties?type=builder" },
   { label: "2BHK Properties", path: "/properties?bhk=2" },
   { label: "3BHK Properties", path: "/properties?bhk=3" },
+  
 ];
 
 // SVG icons for social media
@@ -55,21 +58,25 @@ export default function Footer() {
           {/* Column 1 – Brand */}
           <div className="footer-brand">
             <div className="brand-logo-wrapper">
-              <div className="brand-logo">GA</div>
+              {siteConfig.logo ? (
+                <img src={siteConfig.logo} alt={siteConfig.businessName} className="brand-logo-img" />
+              ) : (
+                <div className="brand-logo">GA</div>
+              )}
               <p className="brand-name">{siteConfig.businessName}</p>
             </div>
             <p className="brand-description">{siteConfig.description}</p>
             <div className="social-icons">
-              <a href='/' target="_blank" rel="noreferrer" className="social-icon">
+              <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer" className="social-icon">
                 <InstagramIcon />
               </a>
-              <a href='/' target="_blank" rel="noreferrer" className="social-icon">
+              <a href={siteConfig.social.facebook} target="_blank" rel="noreferrer" className="social-icon">
                 <FacebookIcon />
               </a>
-              <a href='/' target="_blank" rel="noreferrer" className="social-icon">
+              <a href={siteConfig.social.youtube} target="_blank" rel="noreferrer" className="social-icon">
                 <YoutubeIcon />
               </a>
-              <a href='/' target="_blank" rel="noreferrer" className="social-icon">
+              <a href={siteConfig.social.twitter} target="_blank" rel="noreferrer" className="social-icon">
                 <TwitterIcon />
               </a>
             </div>

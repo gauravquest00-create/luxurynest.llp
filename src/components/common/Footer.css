@@ -1,7 +1,7 @@
-/* Footer.css – responsive, clean alignment */
+/* Footer.css – responsive, clean alignment for LuxuryNest theme */
 
 .footer {
-  background-color: #1e3a8a;
+  background-color: #1F3556; /* Navy Blue */
   color: white;
   margin-top: auto;
 }
@@ -41,7 +41,7 @@
 
 .brand-logo {
   background-color: white;
-  color: #1e3a8a;
+  color: #1F3556; /* Navy Blue */
   font-weight: bold;
   font-size: 0.875rem;
   padding: 0.5rem 0.75rem;
@@ -98,7 +98,7 @@
   letter-spacing: 0.05em;
   color: #93c5fd;
   margin-bottom: 1.25rem;
-  border-left: 3px solid #f97316;
+  border-left: 3px solid #D4AF37; /* Gold accent */
   padding-left: 0.75rem;
 }
 
@@ -144,7 +144,7 @@
 }
 
 .contact-icon {
-  color: #f97316;
+  color: #D4AF37; /* Gold accent */
   flex-shrink: 0;
   margin-top: 0.125rem;
 }
@@ -191,4 +191,11 @@
   color: #93c5fd;
   font-size: 0.75rem;
   margin: 0;
+}
+
+/* Inside Footer.css – add this style for the image logo */
+.brand-logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }

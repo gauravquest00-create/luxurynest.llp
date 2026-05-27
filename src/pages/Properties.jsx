@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import allProperties from "../data/properties";
 import FilterBar from "../components/properties/FilterBar";
 import PropertyGrid from "../components/properties/PropertyGrid";
+import BackButton from '../components/common/BackButton';
 
 export default function Properties() {
   const location = useLocation();
@@ -106,6 +107,8 @@ export default function Properties() {
   return (
     <div style={{ backgroundColor: "#f9fafb", minHeight: "100vh" }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "2rem 1rem" }}>
+                  <BackButton />  
+        
         <h1 style={{ fontSize: "2rem", fontWeight: "bold", color: "#1e3a8a", marginBottom: "1.5rem" }}>
           All Properties
         </h1>

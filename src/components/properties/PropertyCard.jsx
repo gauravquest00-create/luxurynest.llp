@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { slugify } from '../../utils/slugify';
 
 export default function PropertyCard({ property }) {
   const formatPrice = () => {
@@ -25,7 +26,9 @@ export default function PropertyCard({ property }) {
           {property.area && <span>• {property.area} sqft</span>}
           <span>• {property.type === 'rent' ? 'Rent' : 'Sale'}</span>
         </div>
-        <Link to={`/properties/${property.id}`} className="property-card-link">View Details →</Link>
+        <Link to={`/properties/${slugify(property.title)}`} className="property-card-link">
+          View Details →
+        </Link>
       </div>
     </div>
   );

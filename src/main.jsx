@@ -9,8 +9,10 @@ import './index.css';
 import './styles/components/home/home.css';
 import './styles/components/home/hero-banner.css';
 import './styles/components/home/why-choose-us.css';
+import './styles/components/home/Services.css';
 import './styles/components/home/featured-properties.css';
 import './styles/components/home/testimonials.css';
+import './styles/components/home/CTA.css';
 
 // About page component styles
 import './styles/components/about/stats-row.css';

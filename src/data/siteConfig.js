@@ -1,37 +1,76 @@
+// src/data/siteConfig.js
 const siteConfig = {
-  businessName  : "Gaurav Associates",
-  tagline       : "Your Dream Home in Dwarka",
-  description   : "Gaurav Associates Delhi's most trusted real estate agency with 12+ years of experience helping families find their perfect home.",
-  rera          : "RERA/DL/2024/387/33",
-  address       : ", Sector 12, Dwarka, New Delhi — 110075",
-  phone         : "1234567890",
-  phoneDisplay  : "+91 1234567890",
-  whatsapp      : "911234567890",
-  email         : "GauravAssociates@gmail.com",
-  hours         : "Mon – Sat: 10:00 AM – 7:00 PM",
-  experience    : "12",
-  familiesServed: "500+",
-  propertiesListed: "200+",
-  satisfaction  : "98%",
+  businessName: "LuxuryNest",
+
+  tagline: "Your Property, Our Priority",
+
+  description:
+    "LuxuryNest is Gurugram’s trusted real estate agency, helping families find their perfect home with verified listings and expert guidance.",
+
+  rera: "RERA/GM/2024/387/33",
+
+  address: "D-43, Sector XX, Gurugram, Haryana 122001, India",
+
+  phone: "+919650796186 ",
+  phoneDisplay: "+91 9650796186 & 919667435358",
+
+  whatsapp: "919667435358", // IMPORTANT: no + or spaces (for wa.me)
+
+  email: "luxurynest.llp@gmail.com",
+
+  hours: "Tuesday – Monday: 10:00 AM – 7:00 PM",
+
+  experience: "5 Years",
+  familiesServed: "300+",
+  propertiesListed: "100+",
+  satisfaction: "98%",
+
   social: {
-    instagram : "https://instagram.com/GauravAssociates",
-    facebook  : "https://facebook.com/GauravAssociates",
-    youtube   : "https://youtube.com/@GauravAssociates",
-    twitter   : "https://twitter.com/GauravAssociates",
+    instagram: "https://instagram.com/luxurynest.llp",
+    facebook: "https://facebook.com/luxurynest.llp",
+    youtube: "https://youtube.com/@luxurynest.llp",
+    twitter: "https://twitter.com/luxurynest.llp",
   },
+
   colors: {
-    primary    : "#1A56DB",
-    primaryDark: "#1E3A8A",
-    accent     : "#F97316",
+    primary: "#1F3556",      // Navy Blue
+    secondary: "#243A5E",    // Card BG
+    accent: "#D4AF37",       // Gold
+    text: "#FFFFFF",
+    subtext: "#AAB3C5",
   },
+
   seo: {
-    title      : "Gaurav Associates — Buy & Rent Flats in Dwarka Delhi",
-    description: "Buy or Rent flats, houses & shops in Dwarka Delhi. RERA registered. 12 yrs experience. 500+ families served. Call +91 88608 27578.",
-    keywords   : "property in dwarka, flats in dwarka, buy flat delhi, rent flat dwarka, 2bhk dwarka, 3bhk dwarka, sharma properties",
-    ogImage    : "/assets/og-image.jpg",
+    title: "LuxuryNest — Buy & Rent Flats in Gurugram",
+    description:
+      "Buy or rent flats, houses & shops in Gurugram. 200+ families served. Verified properties. Call +91 96507 96186.",
+    keywords:
+      "property in gurugram, flats in gurgaon, buy flat gurugram, rent flat gurugram, 2bhk gurugram, 3bhk gurugram, LuxuryNest",
+    ogImage: "/assets/og-image.jpg",
   },
-  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.1!2d77.0499!3d28.5921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSector+12+Dwarka+Delhi!5e0!3m2!1sen!2sin!4v1234567890",
-  whatsappMessage: "Hi, I found your website and I'm interested in a property. Can you help me?",
+
+  mapEmbedUrl:
+    "https://www.google.com/maps?q=28.5921,77.0499&z=15&output=embed",
+
+  whatsappMessage:
+    "Hi, I found your website and I'm interested in a property. Can you help me?",
+
+  // ✨ New fields for the LuxuryNest project
+  logo: "public/logo.jpeg",  // place a logo.png in public/ folder
+
+  cta: {
+    primary: "Explore Properties",
+    secondary: "Contact Owner",
+  },
+
+  pagination: {
+    perPage: 10,
+  },
+
+  defaults: {
+    city: "Gurugram",
+    currency: "INR",
+  },
 };
 
 export default siteConfig;

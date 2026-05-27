@@ -3,13 +3,15 @@ import OwnerProfile from '../components/about/OwnerProfile';
 import TeamMembers from '../components/about/TeamMembers';
 import RERABadge from '../components/about/RERABadge';
 import siteConfig from '../data/siteConfig';
+import BackButton from '../components/common/BackButton';
 
 export default function About() {
     return (
         <div className="about-page">
             <div className="about-container">
+                <BackButton />
                 <h1 className="about-title">
-                    Gaurav Associates</h1>
+                    Luxurynest</h1>
                 <p className="about-description">{siteConfig.description}</p>
                 <StatsRow />
                 <OwnerProfile />

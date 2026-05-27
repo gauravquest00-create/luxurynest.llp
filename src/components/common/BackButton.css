@@ -1,0 +1,43 @@
+/* unique class – no global selectors */
+.luxury-back-wrapper {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.luxury-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid #D4AF37;
+  color: #1F3556;
+  padding: 0.4rem 1rem;
+  border-radius: 40px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  backdrop-filter: blur(2px);
+}
+
+.luxury-back-btn:hover {
+  background: #D4AF37;
+  color: white;
+  transform: translateX(-4px);
+}
+
+.luxury-back-btn svg {
+  transition: transform 0.2s;
+}
+
+.luxury-back-btn:hover svg {
+  transform: translateX(-2px);
+}
+
+@media (max-width: 640px) {
+  .luxury-back-btn {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}
