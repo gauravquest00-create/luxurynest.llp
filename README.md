@@ -1,10 +1,10 @@
-# 🏠 Sharma Properties – Real Estate Website
+# Luxurynest – Real Estate Website
 
 A modern, fully responsive real estate website for **Sharma Properties**, a RERA‑registered agency in Dwarka, Delhi. The platform allows users to browse, filter, sort, and view detailed property listings, contact the agent, schedule visits, and submit enquiries – all with a professional, fast, and SEO‑friendly frontend.
 
 ## ✨ Live Demo
 
-[Deployed URL – add your live link here after deployment]
+[https://luxurynestllp.vercel.app/]
 
 ## 📋 Features
 
