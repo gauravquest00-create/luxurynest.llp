@@ -1,3 +1,7 @@
+/* ==========================================
+   Property Card – Fully Responsive
+   ========================================== */
+
 .property-card {
   background: white;
   border-radius: 16px;
@@ -5,17 +9,23 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-.property-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+/* Hover only on devices that support it (no effect on mobile) */
+@media (hover: hover) {
+  .property-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+  }
 }
 
 .property-card-img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  display: block;
 }
 
 .property-card-badge {
@@ -28,6 +38,7 @@
   border-radius: 20px;
   font-size: 0.7rem;
   font-weight: bold;
+  z-index: 1;
 }
 
 .property-card-info {
@@ -38,12 +49,15 @@
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .property-card-location {
   color: #6b7280;
   font-size: 0.85rem;
   margin-bottom: 0.5rem;
+  overflow-wrap: break-word;
 }
 
 .property-card-price {
@@ -59,10 +73,81 @@
   font-size: 0.75rem;
   color: #6b7280;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .property-card-link {
   color: #1e3a8a;
   font-weight: 500;
   text-decoration: none;
+  display: inline-block;
+}
+
+/* ========== RESPONSIVE ADJUSTMENTS ========== */
+
+/* Tablet and small desktop (768px – 1024px) – reduce image height slightly */
+@media (max-width: 1024px) {
+  .property-card-img {
+    height: 180px;
+  }
+  .property-card-info {
+    padding: 0.85rem;
+  }
+  .property-card-title {
+    font-size: 1rem;
+  }
+  .property-card-price {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile (<768px) – further reduce spacing and image height */
+@media (max-width: 767px) {
+  .property-card-img {
+    height: 160px;
+  }
+  .property-card-info {
+    padding: 0.75rem;
+  }
+  .property-card-title {
+    font-size: 0.95rem;
+  }
+  .property-card-location {
+    font-size: 0.8rem;
+  }
+  .property-card-price {
+    font-size: 1rem;
+  }
+  .property-card-meta {
+    font-size: 0.7rem;
+    gap: 0.4rem;
+  }
+  .property-card-badge {
+    top: 8px;
+    left: 8px;
+    padding: 3px 10px;
+    font-size: 0.65rem;
+  }
+}
+
+/* Very small mobile (≤480px) – single column may already be handled by grid, but we can tighten */
+@media (max-width: 480px) {
+  .property-card-img {
+    height: 140px;
+  }
+  .property-card-info {
+    padding: 0.6rem;
+  }
+  .property-card-title {
+    font-size: 0.9rem;
+  }
+  .property-card-link {
+    font-size: 0.8rem;
+  }
+}
+
+/* Ensure the grid container (parent) also doesn't overflow */
+.property-grid {
+  overflow-x: hidden;
+  width: 100%;
 }
