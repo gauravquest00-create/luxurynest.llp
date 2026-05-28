@@ -1,13 +1,22 @@
+/* ==========================================
+   FilterBar Component – Fully Responsive
+   ========================================== */
+
+/* Sticky wrapper – adapts to navbar height */
 .filter-bar-wrapper {
   position: sticky;
-  top: 70px;
+  top: 70px;           /* default desktop navbar height */
   z-index: 40;
   background: white;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   margin-bottom: 1.5rem;
   border-radius: 12px;
+  overflow-x: hidden;
+  width: 100%;
+  transition: top 0.2s ease;
 }
 
+/* Top bar – always visible */
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
@@ -17,6 +26,8 @@
   padding: 0.75rem 1rem;
   background: white;
   border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .filter-bar-inputs {
@@ -24,6 +35,7 @@
   flex: 1;
   gap: 0.5rem;
   flex-wrap: wrap;
+  min-width: 0;
 }
 
 .search-input {
@@ -61,7 +73,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   width: 200px;
-  z-index: 100;
+  z-index: 1000;
   margin-top: 0.5rem;
   overflow: hidden;
 }
@@ -85,6 +97,7 @@
   cursor: pointer;
 }
 
+/* Expandable filter panel (hidden by default on mobile) */
 .filter-panel {
   max-height: 0;
   overflow: hidden;
@@ -117,10 +130,31 @@
   border-radius: 8px;
 }
 
-/* Desktop: show filter panel always and sticky bar inline */
-@media (min-width: 768px) {
+/* ========== TABLET (768px – 1024px) ========== */
+@media (min-width: 768px) and (max-width: 1024px) {
   .filter-bar-wrapper {
-    position: sticky;
+    top: 70px;
+  }
+  .filter-toggle {
+    display: block; /* keep toggle visible on tablet for better UX */
+  }
+  .filter-panel {
+    max-height: 0; /* collapsed by default, toggle opens */
+  }
+  .filter-panel.open {
+    max-height: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .filter-group {
+    margin-bottom: 0;
+  }
+}
+
+/* ========== DESKTOP (≥1025px) ========== */
+@media (min-width: 1025px) {
+  .filter-bar-wrapper {
     top: 70px;
   }
   .filter-toggle {
@@ -132,21 +166,127 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+    overflow-x: auto;
   }
   .filter-group {
     margin-bottom: 0;
+    min-width: 0;
   }
 }
 
+/* ========== MOBILE (<768px) ========== */
 @media (max-width: 767px) {
+  .filter-bar-wrapper {
+    top: 60px; /* adjust for smaller mobile navbar */
+  }
   .filter-bar-inputs {
     width: 100%;
   }
   .search-input {
     width: 100%;
+    min-width: unset;
   }
   .reset-btn {
     width: 100%;
     margin-top: 0.5rem;
   }
+  .filter-panel.open {
+    padding: 0.75rem;
+  }
+  .filter-group {
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* ========== SMALL MOBILE (≤480px) ========== */
+@media (max-width: 480px) {
+  .filter-bar {
+    padding: 0.5rem 0.75rem;
+  }
+  .filter-toggle, .sort-toggle {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  .search-input {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+  }
+  .reset-btn {
+    padding: 0.4rem 0.8rem;
+  }
+  .filter-group label {
+    font-size: 0.75rem;
+  }
+}
+
+/* ========== CUSTOM DROPDOWNS & SUGGESTIONS (All screens) ========== */
+.custom-select {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select-trigger {
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.5rem;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.custom-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 9999;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 4px;
+}
+
+.dropdown-option {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown-option:hover,
+.dropdown-option.active {
+  background: #f0f0f0;
+}
+
+.search-container {
+  position: relative;
+  flex: 2;
+  min-width: 180px;
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 9999;
+  margin-top: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.suggestion-item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.suggestion-item:hover {
+  background: #f0f0f0;
 }
