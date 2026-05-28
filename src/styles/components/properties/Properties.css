@@ -1,13 +1,20 @@
+/* Properties page – prevents horizontal overflow, preserves sticky navbar */
 .properties-page {
   background-color: #f9fafb;
   min-height: 100vh;
   padding: 2rem 0;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
 }
 
 .properties-container {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .properties-title {
@@ -36,6 +43,7 @@
   background: #e5e7eb;
   border-radius: 8px;
   cursor: pointer;
+  transition: background 0.2s;
 }
 
 .pagination button.active {
@@ -46,4 +54,65 @@
 .pagination button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+/* ========== TABLET (768px – 1024px) ========== */
+@media (max-width: 1024px) {
+  .properties-page {
+    padding: 1.5rem 0;
+  }
+  .properties-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* ========== MOBILE (≤768px) ========== */
+@media (max-width: 768px) {
+  .properties-page {
+    padding: 1rem 0;
+  }
+  .properties-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .properties-container {
+    padding: 0 0.75rem;
+  }
+  .pagination button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* ========== SMALL MOBILE (≤480px) ========== */
+@media (max-width: 480px) {
+  .properties-page {
+    padding: 0.75rem 0;
+  }
+  .properties-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  .properties-count {
+    font-size: 0.85rem;
+    margin: 0.75rem 0;
+  }
+  .pagination {
+    gap: 0.3rem;
+  }
+  .pagination button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* ========== EXTRA SMALL (≤360px) ========== */
+@media (max-width: 360px) {
+  .pagination {
+    gap: 0.25rem;
+  }
+  .pagination button {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+  }
 }
