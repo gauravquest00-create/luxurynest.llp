@@ -7,7 +7,7 @@ const teamMembers = [
     rera: "RERA/GM/2024/387/34",
     phone: "919650796186",
     avatar: "SG",
-    image: "public/abhishek.jpeg",
+    image: "/abhishek.jpeg",
 
 
     bio: "With 4 years of experience in Gurugram real estate, Sandeep Goyal has helped 200+ families find their dream homes in Gurugram and surrounding areas.",
@@ -21,7 +21,7 @@ const teamMembers = [
     rera: "RERA/GM/2024/387/34",
     phone: "919667435358",
     avatar: "AR",
-    image: "public/abhishek.jpeg",
+    image: "/abhishek.jpeg",
     bio: "Abhishek specializes in residential and first-time homebuyer guidance, ensuring every client finds the right home at the right price.",
   },
 
