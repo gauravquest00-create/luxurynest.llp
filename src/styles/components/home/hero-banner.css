@@ -36,13 +36,10 @@
   flex-wrap: wrap;
 }
 
-/* ALL buttons have SAME style - Gold background */
+/* Base Button Style */
 .hero-btn {
-  background-color: #D4AF37; /* Gold */
-  color: #1F3556; /* Navy text */
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
-  border: none;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
@@ -50,9 +47,28 @@
   font-family: inherit;
 }
 
-/* ALL buttons have SAME hover effect */
-.hero-btn:hover {
-  background-color: #B8962C; /* Darker gold */
+/* Primary Button - Gold */
+.hero-btn.primary {
+  background-color: #D4AF37;
+  color: #1F3556;
+  border: none;
+}
+
+.hero-btn.primary:hover {
+  background-color: #B8962C;
+  transform: translateY(-2px);
+}
+
+/* Secondary Button - Outline */
+.hero-btn.secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid #D4AF37;
+}
+
+.hero-btn.secondary:hover {
+  background-color: #D4AF37;
+  color: #1F3556;
   transform: translateY(-2px);
 }
 
@@ -72,7 +88,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   display: block;
-  color: #D4AF37; /* Gold for numbers */
+  color: #D4AF37;
 }
 
 .stat-label {
