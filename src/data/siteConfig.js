@@ -8,7 +8,7 @@ const siteConfig = {
 
 With over 8 years of experience in the Gurugram real estate market, LuxuryNest provides end-to-end services across residential, commercial, plots, and builder floors, covering every major sector of the city.
 
-Our extensive network includes collaborations with the most respected real estate brands in the country, including DLF, Elan, Godrej, Sobha, M3M, Bestech, Krisumi, Oberoi Realty, Signature Global, Prestige, ATS, Lodha, Prateek, Omaxe, SPJ, Emaar, Vatika Smartworld, Central Park, Experion, and many more.
+Our extensive network includes collaborations with the most respected real estate brands in the country, including DLF, Elan, Godrej, Sobha, M3M, Bestech, Krisumi, Oberoi Realty, Signature Global, Prestige, ATS, Lodha, Prateek, Omaxe, SPJ, Emaar, Vatika ,Smartworld, Central Park, Experion, and many more.
 
 Whether you are a first-time homebuyer, a growing family looking for your dream home, or an investor seeking commercial or plot opportunities, LuxuryNest offers guidance rooted in integrity, market expertise, and a commitment to fair value. We believe every client deserves the right property at the right price, and we work tirelessly to make that happen.
 
