@@ -10,10 +10,10 @@ export default function About() {
         <div className="about-page">
             <div className="about-container">
                 <BackButton />
+                <StatsRow />
                 <h1 className="about-title">
                     Luxurynest</h1>
                 <p className="about-description">{siteConfig.description}</p>
-                <StatsRow />
                 {/* <OwnerProfile /> */}
                 <TeamMembers />
 
