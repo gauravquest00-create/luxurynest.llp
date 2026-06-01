@@ -92,7 +92,7 @@ export default function Navbar() {
                   lineHeight: 1.25,
                 }}
               >
-                RERA: {siteConfig.rera}
+                RERA Register
               </p>
             </div>
           </Link>
