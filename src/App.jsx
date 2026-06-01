@@ -43,7 +43,7 @@ function AppContent() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/new-launches" element={<NewLaunches />} />
-        <Route path="/construction" element={<Construction />} />  
+        <Route path="/cooo" element={<Construction />} />  
 
         
         {/* 404 Route - Catch all unmatched routes */}
