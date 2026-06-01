@@ -1,0 +1,82 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "DLF The Valley",
+      "location": "Sector 71",
+      "sector": "71",
+      "area": "Gurugram",
+      "price": "₹2.5 Cr onwards",
+      "priceNum": 25000000,
+      "type": "Luxury Apartments",
+      "image": "/projects/dlf-valley.jpg",
+      "status": "New Launch",
+      "rera": "DLF/GM/2024/001"
+    },
+    {
+      "id": 2,
+      "name": "Godrej Air",
+      "location": "Sector 71",
+      "sector": "71",
+      "area": "Gurugram",
+      "price": "₹1.8 Cr onwards",
+      "priceNum": 18000000,
+      "type": "Premium Floors",
+      "image": "/projects/godrej-air.jpg",
+      "status": "Pre-Launch",
+      "rera": "GODREJ/GM/2024/002"
+    },
+    {
+      "id": 3,
+      "name": "M3M Golf Estate",
+      "location": "Sector 65",
+      "sector": "65",
+      "area": "Gurugram",
+      "price": "₹3.2 Cr onwards",
+      "priceNum": 32000000,
+      "type": "Luxury Villas",
+      "image": "/projects/m3m-golf.jpg",
+      "status": "New Launch",
+      "rera": "M3M/GM/2024/003"
+    },
+    {
+      "id": 4,
+      "name": "Emaar Digi Homes",
+      "location": "Sector 62",
+      "sector": "62",
+      "area": "Gurugram",
+      "price": "₹75 Lakhs onwards",
+      "priceNum": 7500000,
+      "type": "Smart Homes",
+      "image": "/projects/emaar-digi.jpg",
+      "status": "Launching Soon",
+      "rera": "EMAAR/GM/2024/004"
+    },
+    {
+      "id": 5,
+      "name": "Signature Global",
+      "location": "Sector 71",
+      "sector": "71",
+      "area": "Gurugram",
+      "price": "₹65 Lakhs onwards",
+      "priceNum": 6500000,
+      "type": "Affordable Homes",
+      "image": "/projects/signature.jpg",
+      "status": "New Launch",
+      "rera": "SIGNATURE/GM/2024/005"
+    },
+    {
+      "id": 6,
+      "name": "Prestige City",
+      "location": "Sector 72",
+      "sector": "72",
+      "area": "Gurugram",
+      "price": "₹1.2 Cr onwards",
+      "priceNum": 12000000,
+      "type": "Apartments",
+      "image": "/projects/prestige.jpg",
+      "status": "Pre-Launch",
+      "rera": "PRESTIGE/GM/2024/006"
+    }
+  ]
+}
