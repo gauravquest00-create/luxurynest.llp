@@ -17,7 +17,7 @@ export default function HeroBanner() {
         </button>
         <div className="hero-stats">
           <div className="stat">
-            <span className="stat-value">{siteConfig.experience}+</span>
+            <span className="stat-value">{siteConfig.experience}</span>
             <span className="stat-label">Years Experience</span>
           </div>
           <div className="stat">
