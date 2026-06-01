@@ -28,6 +28,7 @@ export default function Construction() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
   const [priceEstimate, setPriceEstimate] = useState(null);
+  const [expandedCard, setExpandedCard] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -47,25 +48,31 @@ export default function Construction() {
       id: 1,
       name: "Basic Civil Construction",
       icon: "🏗️",
-      description: "Structure with plaster - Complete civil work including foundation, walls, beams, columns, and plastering",
+      shortDesc: "Structure with plaster - Complete civil work",
+      description: "Complete civil work including foundation, walls, beams, columns, and plastering. This is the basic structure of your building ready for further finishing.",
       includes: ["Foundation", "Wall Construction", "Beams & Columns", "Roof Casting", "Plastering", "Basic Flooring"],
-      excludes: ["Interior Design", "Modular Kitchen", "False Ceiling", "Woodwork", "Painting"]
+      excludes: ["Interior Design", "Modular Kitchen", "False Ceiling", "Woodwork", "Painting"],
+      priceNote: "Price includes only civil structure with plaster. Interior and finishing work will be charged separately."
     },
     {
       id: 2,
       name: "Turnkey Construction",
       icon: "🔑",
-      description: "Ready to move construction with interior - Complete home from foundation to finishing",
+      shortDesc: "Ready to move construction with interior",
+      description: "Complete home from foundation to finishing - just bring your luggage and move in! Everything is included from structure to interior.",
       includes: ["Civil Structure", "Plumbing", "Electrical", "Interior Design", "Modular Kitchen", "False Ceiling", "Woodwork", "Painting", "Bathroom Fittings"],
-      excludes: ["Furniture", "ACs", "Appliances"]
+      excludes: ["Furniture", "ACs", "Appliances", "Electronics"],
+      priceNote: "⚠️ NOTE: The estimated price is for Basic Civil Construction. Interior cost depends on your specific requirements, design choices, and material preferences. Final interior cost will be shared after detailed discussion."
     },
     {
       id: 3,
       name: "Raw Construction",
       icon: "🏠",
-      description: "Upgrade from civil - Basic structure ready, need finishing and interiors",
+      shortDesc: "Upgrade from civil - Basic structure ready",
+      description: "Basic structure is ready with plaster. You need finishing work including flooring, painting, bathroom fittings, and interiors.",
       includes: ["Basic Structure Ready", "Plaster Done", "Need Flooring", "Need Painting", "Need Bathroom Fitting"],
-      excludes: ["Structure Work", "Plastering"]
+      excludes: ["Structure Work", "Plastering", "Major Civil Work"],
+      priceNote: "Upgrade cost depends on the finishing quality and materials you choose."
     }
   ];
 
@@ -91,14 +98,12 @@ export default function Construction() {
 
   // Calculate price estimate
   const calculateEstimate = () => {
-    // Convert plot size to sqft (1 sqyd = 9 sqft)
     let areaSqft = parseFloat(formData.plotSize);
     if (formData.plotUnit === 'sqyd') {
       areaSqft = areaSqft * 9;
     }
     
     const floors = parseInt(formData.floors);
-    // Total area = (floors + 1) * plot area in sqft
     const totalArea = (floors + 1) * areaSqft;
     
     const material = materialTypes.find(m => m.id === formData.materialType);
@@ -130,10 +135,34 @@ export default function Construction() {
     setPriceEstimate(null);
   };
 
+  const handleBackToServices = () => {
+    setShowForm(false);
+    setSelectedService(null);
+    setShowEstimate(false);
+    setPriceEstimate(null);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      serviceType: '',
+      plotSize: '',
+      plotUnit: 'sqyd',
+      floors: '2',
+      materialType: 'primary',
+      location: '',
+      message: ''
+    });
+    setError('');
+  };
+
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setError('');
     setShowEstimate(false);
+  };
+
+  const toggleExpand = (id) => {
+    setExpandedCard(expandedCard === id ? null : id);
   };
 
   // Submit to Google Sheet
@@ -252,7 +281,7 @@ export default function Construction() {
               Thank You, {formData.name}!
             </h2>
             <p style={{ color: '#4b5563', marginBottom: '1rem' }}>
-              We have received your construction requirement.
+              We have received your construction requirement for {selectedService?.name}.
             </p>
             <p style={{ color: '#6b7280', fontSize: '0.875rem' }}>
               Our construction expert will contact you within 24 hours with a detailed quote.
@@ -264,56 +293,102 @@ export default function Construction() {
         {!showForm && !showThankYou && (
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
             gap: '1.5rem',
             marginBottom: '2rem'
           }}>
             {constructionServices.map(service => (
               <div
                 key={service.id}
-                onClick={() => handleServiceSelect(service)}
                 style={{
                   backgroundColor: 'white',
                   borderRadius: '1rem',
                   padding: '1.5rem',
-                  cursor: 'pointer',
                   transition: 'all 0.3s',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.boxShadow = '0 10px 25px -5px rgba(0,0,0,0.2)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
                 }}
               >
                 <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>{service.icon}</div>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>{service.name}</h3>
-                <p style={{ color: '#6b7280', fontSize: '0.875rem', marginBottom: '1rem' }}>{service.description}</p>
-                <div style={{ marginTop: '1rem' }}>
-                  <p style={{ fontWeight: 'bold', fontSize: '0.875rem', marginBottom: '0.5rem' }}>Includes:</p>
-                  <ul style={{ fontSize: '0.8rem', color: '#4b5563', listStyle: 'none', padding: 0 }}>
-                    {service.includes.slice(0, 3).map((item, idx) => (
-                      <li key={idx} style={{ marginBottom: '0.25rem' }}>✓ {item}</li>
-                    ))}
-                    {service.includes.length > 3 && (
-                      <li style={{ color: '#f97316', fontSize: '0.75rem' }}>+{service.includes.length - 3} more</li>
+                <p style={{ color: '#6b7280', fontSize: '0.875rem', marginBottom: '1rem' }}>{service.shortDesc}</p>
+                
+                {/* Expand/Collapse Button */}
+                <button
+                  onClick={() => toggleExpand(service.id)}
+                  style={{
+                    color: '#1e3a8a',
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontSize: '0.875rem',
+                    fontWeight: '500',
+                    marginBottom: '1rem',
+                    padding: 0
+                  }}
+                >
+                  {expandedCard === service.id ? '▲ Show Less' : '▼ Show More'}
+                </button>
+
+                {/* Expanded Content */}
+                {expandedCard === service.id && (
+                  <div style={{
+                    marginTop: '1rem',
+                    padding: '1rem',
+                    backgroundColor: '#f9fafb',
+                    borderRadius: '0.5rem',
+                    marginBottom: '1rem'
+                  }}>
+                    <p style={{ fontSize: '0.875rem', color: '#4b5563', marginBottom: '1rem' }}>
+                      {service.description}
+                    </p>
+                    <div>
+                      <p style={{ fontWeight: 'bold', fontSize: '0.875rem', marginBottom: '0.5rem' }}>✓ Includes:</p>
+                      <ul style={{ fontSize: '0.8rem', color: '#4b5563', listStyle: 'none', padding: 0, marginBottom: '1rem' }}>
+                        {service.includes.map((item, idx) => (
+                          <li key={idx} style={{ marginBottom: '0.25rem' }}>✓ {item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p style={{ fontWeight: 'bold', fontSize: '0.875rem', marginBottom: '0.5rem' }}>✗ Excludes:</p>
+                      <ul style={{ fontSize: '0.8rem', color: '#6b7280', listStyle: 'none', padding: 0 }}>
+                        {service.excludes.map((item, idx) => (
+                          <li key={idx} style={{ marginBottom: '0.25rem' }}>✗ {item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    {service.priceNote && (
+                      <div style={{
+                        marginTop: '1rem',
+                        padding: '0.5rem',
+                        backgroundColor: '#fef3c7',
+                        borderRadius: '0.5rem',
+                        fontSize: '0.75rem',
+                        color: '#92400e'
+                      }}>
+                        💡 {service.priceNote}
+                      </div>
                     )}
-                  </ul>
-                </div>
-                <button style={{
-                  marginTop: '1rem',
-                  width: '100%',
-                  padding: '0.5rem',
-                  backgroundColor: '#1e3a8a',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '0.5rem',
-                  cursor: 'pointer'
-                }}>
-                  Select This Service →
+                  </div>
+                )}
+
+                <button
+                  onClick={() => handleServiceSelect(service)}
+                  style={{
+                    marginTop: '1rem',
+                    width: '100%',
+                    padding: '0.75rem',
+                    backgroundColor: '#1e3a8a',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '0.5rem',
+                    cursor: 'pointer',
+                    fontWeight: 'bold'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f97316'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1e3a8a'}
+                >
+                  {service.name} - Get Quote →
                 </button>
               </div>
             ))}
@@ -328,14 +403,30 @@ export default function Construction() {
             padding: '1.5rem',
             boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)'
           }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-              <h2 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#1e3a8a' }}>
-                {selectedService?.name} - Get Quote
-              </h2>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
+              <div>
+                <button
+                  onClick={handleBackToServices}
+                  style={{
+                    padding: '0.5rem 1rem',
+                    backgroundColor: '#6b7280',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '0.5rem',
+                    cursor: 'pointer',
+                    marginRight: '1rem'
+                  }}
+                >
+                  ← Back to Services
+                </button>
+                <h2 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#1e3a8a', display: 'inline-block' }}>
+                  {selectedService?.name} - Get Quote
+                </h2>
+              </div>
               <button
                 onClick={handleReset}
                 style={{
-                  padding: '0.25rem 0.75rem',
+                  padding: '0.5rem 1rem',
                   backgroundColor: '#ef4444',
                   color: 'white',
                   border: 'none',
@@ -346,6 +437,22 @@ export default function Construction() {
                 ✕ Cancel
               </button>
             </div>
+
+            {/* Turnkey Construction Note */}
+            {selectedService?.id === 2 && (
+              <div style={{
+                backgroundColor: '#fef3c7',
+                padding: '1rem',
+                borderRadius: '0.5rem',
+                marginBottom: '1.5rem',
+                borderLeft: '4px solid #f59e0b'
+              }}>
+                <p style={{ fontWeight: 'bold', marginBottom: '0.25rem' }}>⚠️ Important Note:</p>
+                <p style={{ fontSize: '0.875rem', color: '#92400e' }}>
+                  The estimated price below is for Basic Civil Construction only. Interior design and finishing costs will depend on your specific requirements, design choices, and material preferences. Our team will provide a detailed interior quote after understanding your needs.
+                </p>
+              </div>
+            )}
 
             <form onSubmit={handleSubmit}>
               {/* Plot Details */}
@@ -481,6 +588,11 @@ export default function Construction() {
                         ₹{priceEstimate.minPrice.toLocaleString('en-IN')} - ₹{priceEstimate.maxPrice.toLocaleString('en-IN')}
                       </span>
                     </p>
+                    {selectedService?.id === 2 && (
+                      <p style={{ fontSize: '0.75rem', color: '#92400e', marginTop: '0.5rem', backgroundColor: '#fef3c7', padding: '0.5rem', borderRadius: '0.25rem' }}>
+                        ⚠️ This is estimated civil construction cost. Interior cost will be calculated separately based on your requirements.
+                      </p>
+                    )}
                   </div>
                 </div>
               )}
