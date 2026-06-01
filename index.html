@@ -16,30 +16,33 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://luxurynest.llp" />
+    <meta property="og:url" content="https://luxurynest.vercel.app" />
     <meta property="og:title" content="LuxuryNest – Best Real Estate in Gurugram" />
     <meta property="og:description" content="RERA registered agency. Buy/Rent flats, houses, shops in Gurugram. Trusted by 200+ families." />
-    <meta property="og:image" content="/logo.jpeg" />
+    <meta property="og:image" content="https://luxurynest.vercel.app/logo.jpeg" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://luxurynest.llp" />
+    <meta property="twitter:url" content="https://luxurynest.vercel.app" />
     <meta property="twitter:title" content="LuxuryNest – Best Real Estate in Gurugram" />
     <meta property="twitter:description" content="RERA registered agency. Buy/Rent flats, houses, shops in Gurugram." />
-    <meta property="twitter:image" content="/logo.jpeg" />
+    <meta property="twitter:image" content="https://luxurynest.vercel.app/logo.jpeg" />
     
-    <!-- Geo / Local Business (Gurugram, Haryana) -->
+    <!-- Geo / Local Business (Gurugram, Haryana) - Fixed coordinates -->
     <meta name="geo.region" content="IN-HR" />
     <meta name="geo.placename" content="Gurugram, Haryana" />
     <meta name="geo.position" content="28.4595;77.0266" />
     <meta name="ICBM" content="28.4595, 77.0266" />
     
-    <!-- Favicon & Apple Touch Icon (directly from /logo.jpeg) -->
+    <!-- Favicon & Apple Touch Icon -->
     <link rel="icon" type="image/jpeg" href="/logo.jpeg" />
     <link rel="apple-touch-icon" href="/logo.jpeg" />
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://luxurynest.llp" />
+    <!-- Also add standard favicon to avoid 404 errors -->
+    <link rel="shortcut icon" href="/logo.jpeg" type="image/jpeg" />
+    
+    <!-- Canonical URL - Fixed to actual domain -->
+    <link rel="canonical" href="https://luxurynest.vercel.app" />
     
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,14 +52,14 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     
-    <!-- Structured Data for Local Business (Google Maps & Rich Results) -->
+    <!-- Structured Data for Local Business (Google Maps & Rich Results) - Fixed coordinates -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "RealEstateAgent",
       "name": "LuxuryNest",
-      "image": "https://luxurynest.llp/logo.jpeg",
-      "url": "https://luxurynest.llp",
+      "image": "https://luxurynest.vercel.app/logo.jpeg",
+      "url": "https://luxurynest.vercel.app",
       "telephone": "+919650796186",
       "email": "luxurynest.llp@gmail.com",
       "address": {
