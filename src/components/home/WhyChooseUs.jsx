@@ -10,8 +10,8 @@ export default function WhyChooseUs() {
   return (
     <section className="why-choose-us">
       <div className="why-container">
-        <h2 className="section-title">Why Choose Luxurynest?</h2>
-        <p className="section-subtitle">Your trusted partner in real estate since 2012</p>
+        <h2 className="section-title">Why Choose LuxuryNest?</h2>
+        <p className="section-subtitle">Your trusted partner in real estate since 2021</p>
         <div className="features-grid">
           {features.map((f, idx) => (
             <div key={idx} className="feature-card">
