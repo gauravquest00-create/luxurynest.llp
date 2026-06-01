@@ -246,12 +246,12 @@ images: [
   },
   amenities: ["Swimming Pool", "Gym", "Club House", "24x7 Security", "Power Backup", "Lift", "Park", "Jogging Track", "Community Hall"],
   propertyFeatures: ["High Rise Tower", "Corner Unit", "Wide Balcony", "Modular Layout", "Gated Society", "Covered Parking"],
-  image: "/vatika/image1.jpg",
+  image: "/vatikag21/image1.jpg",
   images: [
-    "/vatika/image1.jpg",
-    "/vatika/image2.jpg",
-    "/vatika/image3.jpg",
-    "/vatika/image4.jpg",
+    "/vatikag21/image1.jpg",
+    "/vatikag21/image2.jpg",
+    "/vatikag21/image3.jpg",
+    "/vatikag21/image4.jpg",
     
   ]
 },
