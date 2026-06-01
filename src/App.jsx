@@ -1,6 +1,6 @@
 // src/App.jsx
 import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import WhatsAppButton from "./components/common/WhatsAppButton";
@@ -11,6 +11,7 @@ import Properties from "./pages/Properties";
 import PropertyDetail from "./pages/PropertyDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 
 // Inner component that uses useLocation (must be inside BrowserRouter)
 function AppContent() {
@@ -31,13 +32,15 @@ function AppContent() {
       <ScrollToTop />
       <Navbar />
       <Routes>
+        {/* Main Routes */}
         <Route path="/" element={<Home />} />
         <Route path="/properties" element={<Properties />} />
-        {/* <Route path="/properties/:id" element={<PropertyDetail />} /> */}
-        {/* <Route path="/properties/:slug" element={<PropertyDetail />} /> */}
         <Route path="/properties/:title" element={<PropertyDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        
+        {/* 404 Route - Catch all unmatched routes */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       <WhatsAppButton />
