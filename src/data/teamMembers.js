@@ -4,7 +4,7 @@ const teamMembers = [
     name: "Sandeep Goyal",
     role: "Founder & Senior Property Advisor",
     experience: "8 Years",
-    phone: "919650796186",
+    phone: "+91 9650796186",
     avatar: "SG",
     image: "/SandeepGoyal.jpeg",
 
@@ -17,10 +17,10 @@ const teamMembers = [
     name: "Abhishek Rastogi",
     role: "Founder & Senior Property Advisor",
     experience: "6 Years",
-    phone: "919667435358",
+    phone: "+91 9667435358",
     avatar: "AR",
     image: "/abhishek.jpeg",
-    bio: "Abhishek specializes in residential and first-time homebuyer guidance, ensuring every client finds the right home at the right price.",
+    bio: "Abhishek Rastogi has over 6 years of experience in residential and commercial real estate. He has served more than 200+ buyers and investors, with a special focus on helping first-time homebuyers. Known for his careful approach and commitment to fair value, he helps every client find the right property—whether a first home or a commercial space—at the right price",
   },
 
 ]
