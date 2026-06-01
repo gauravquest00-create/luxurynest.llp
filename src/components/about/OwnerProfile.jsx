@@ -13,8 +13,8 @@ export default function OwnerProfile() {
         <div className="owner-info">
           <h2 className="owner-name">Meet {owner.name}</h2>
           <p className="owner-role">{owner.role}</p>
-          <p className="owner-bio">{owner.bio || `With over ${siteConfig.experience} years of experience in Dwarka's real estate market, ${owner.name} has helped more than ${siteConfig.familiesServed} families find their dream homes.`}</p>
-          <p className="owner-bio-secondary">{owner.bio2 || 'Our commitment to transparency, integrity, and client satisfaction has made Sharma Properties one of the most trusted names in Dwarka.'}</p>
+          <p className="owner-bio">{owner.bio || `With over ${siteConfig.experience} years of experience in Gurugram's real estate market, ${owner.name} has helped more than ${siteConfig.familiesServed} families find their dream homes.`}</p>
+          <p className="owner-bio-secondary">{owner.bio2 || 'Our commitment to transparency, integrity, and client satisfaction has made Luxurynest one of the most trusted names in Gurugram.'}</p>
         </div>
       </div>
     </div>
