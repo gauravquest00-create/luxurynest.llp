@@ -281,11 +281,12 @@ images: [
   },
   amenities: ["Swimming Pool", "Gym", "Club House", "24x7 Security", "Power Backup", "Lift", "Park", "Jogging Track", "Community Hall"],
   propertyFeatures: ["High Rise Tower", "Corner Unit", "Wide Balcony", "Modular Layout", "Gated Society", "Covered Parking"],
-  image: "https://example.com/vatika_main2.jpg",
+ image: "/vatikag21/image1.jpg",
   images: [
-    "https://example.com/vatika4.jpg",
-    "https://example.com/vatika5.jpg",
-    "https://example.com/vatika6.jpg"
+    "/vatikag21/image1.jpg",
+    "/vatikag21/image2.jpg",
+    "/vatikag21/image3.jpg",
+    "/vatikag21/image4.jpg"
   ]
 },
 
@@ -315,11 +316,12 @@ images: [
   },
   amenities: ["Swimming Pool", "Gym", "Club House", "24x7 Security", "Power Backup", "Lift", "Park", "Jogging Track", "Community Hall"],
   propertyFeatures: ["High Rise Tower", "Wide Balcony", "Efficient Layout", "Gated Society", "Covered Parking"],
-  image: "https://example.com/vatika_main3.jpg",
+  image: "/vatikag21/image1.jpg",
   images: [
-    "https://example.com/vatika7.jpg",
-    "https://example.com/vatika8.jpg",
-    "https://example.com/vatika9.jpg"
+    "/vatikag21/image1.jpg",
+    "/vatikag21/image2.jpg",
+    "/vatikag21/image3.jpg",
+    "/vatikag21/image4.jpg"
   ]
 },
 {
@@ -417,11 +419,14 @@ images: [
   },
   amenities: ["Swimming Pool", "Gym", "Club House", "24x7 Security", "Power Backup", "Lift", "Landscaped Gardens", "Jogging Track", "Kids Play Area", "Community Hall", "Sports Area"],
   propertyFeatures: ["High Rise Tower", "Wide Balcony", "Efficient Layout", "Gated Society", "Covered Parking"],
-  image: "https://example.com/bestech_main2.jpg",
+   image: "/sanskruti/image1.jpg",
   images: [
-    "https://example.com/bestech4.jpg",
-    "https://example.com/bestech5.jpg",
-    "https://example.com/bestech6.jpg"
+    "/sanskruti/image1.jpg",
+    "/sanskruti/image2.jpg",
+    "/sanskruti/image3.jpg",
+    "/sanskruti/image4.jpg",
+    "/sanskruti/image5.jpg",
+    "/sanskruti/image6.jpg",
   ]
 },
 {
@@ -516,11 +521,13 @@ images: [
   },
   amenities: ["24x7 Security", "Power Backup", "Lift", "Park", "Kids Play Area", "Community Hall", "Basic Gym"],
   propertyFeatures: ["Economical Housing", "High Rise Tower", "Functional Layout", "Gated Society", "Open Parking"],
-  image: "https://example.com/affordable_main.jpg",
+  image: "/Antriksh_2bhk_120sqft/image1.jpg",
   images: [
-    "https://example.com/affordable1.jpg",
-    "https://example.com/affordable2.jpg",
-    "https://example.com/affordable3.jpg"
+    "/Antriksh_2bhk_120sqft/image1.jpg",
+    "/Antriksh_2bhk_120sqft/image1.jpg",
+    "/Antriksh_2bhk_120sqft/image1.jpg",
+    "/Antriksh_2bhk_120sqft/image1.jpg",
+    "/Antriksh_2bhk_120sqft/image1.jpg"
   ]
 },
 {
@@ -549,11 +556,13 @@ images: [
   },
   amenities: ["24x7 Security", "Power Backup", "Lift", "Park", "Kids Play Area", "Community Hall", "Basic Gym"],
   propertyFeatures: ["Economical Housing", "High Rise Tower", "Functional Layout", "Gated Society", "Open Parking"],
-  image: "https://example.com/antriksh_main.jpg",
+   image: "/Antriksh_2bhk_120sqft/image1.jpg",
   images: [
-    "https://example.com/antriksh1.jpg",
-    "https://example.com/antriksh2.jpg",
-    "https://example.com/antriksh3.jpg"
+    "/Antriksh_2bhk_120sqft/image1.jpg",
+    "/Antriksh_2bhk_120sqft/image1.jpg",
+    "/Antriksh_2bhk_120sqft/image1.jpg",
+    "/Antriksh_2bhk_120sqft/image1.jpg",
+    "/Antriksh_2bhk_120sqft/image1.jpg"
   ]
 },
 
