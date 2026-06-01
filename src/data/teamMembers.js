@@ -9,7 +9,7 @@ const teamMembers = [
     image: "/SandeepGoyal.jpeg",
 
 
-    bio: "With 8 years of experience in Gurugram real estate, Sandeep Goyal has helped 200+ families find their dream homes in Gurugram and surrounding areas.",
+    bio: "With 8 years of experience in Gurugram real estate, Sandeep Goyal has helped 300+ families find their dream homes in Gurugram and surrounding areas.",
   },
 
   {
