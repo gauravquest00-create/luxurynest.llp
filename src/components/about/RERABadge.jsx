@@ -6,11 +6,11 @@ export default function RERABadge() {
             <div className="rera-content">
                 <span className="rera-icon">🏢</span>
                 <p className="rera-text">
-                    <strong>RERA Registered:</strong> {siteConfig.rera}
+                    <strong>RERA Registered:</strong> 
                 </p>
                 <p className="rera-disclaimer">
 
-                    Gaurav Associates is a fully compliant real estate agency registered under RERA Act.
+                    Luxurynest is a fully compliant real estate agency registered under RERA Act.
                 </p>
             </div>
         </div>
