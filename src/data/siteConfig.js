@@ -4,15 +4,7 @@ const siteConfig = {
 
   tagline: "Your Property, Our Priority",
 
-  description:"LuxuryNest is Gurugram's trusted real estate agency, helping families and investors find their perfect property with verified listings and expert guidance.
-
-With over 8 years of experience in the Gurugram real estate market, LuxuryNest provides end-to-end services across residential, commercial, plots, and builder floors, covering every major sector of the city.
-
-Our extensive network includes collaborations with the most respected real estate brands in the country, including DLF, Elan, Godrej, Sobha, M3M, Bestech, Krisumi, Obrai Realty, Signature Global, Prestige, ATS, Lodha, Prateek, Demax, Omaxe, SPJ, Vatika Smartworld, Central Park, Experion, and many more.
-
-Whether you are a first-time homebuyer, a growing family looking for your dream home, or an investor seeking commercial or plot opportunities, LuxuryNest offers guidance rooted in integrity, market expertise, and a commitment to fair value. We believe every client deserves the right property at the right price, and we work tirelessly to make that happen.
-
-From luxury apartments and builder floors to commercial spaces and residential plots, LuxuryNest is your dependable partner in navigating Gurugram's dynamic real estate landscape",
+  description:"LuxuryNest is Gurugram's trusted real estate agency, helping families and investors find their perfect property with verified listings and expert guidance.",
 
   rera: "RERA/GM/2024/387/33",
 
