@@ -25,7 +25,7 @@ From luxury apartments and builder floors to commercial spaces and residential p
 
   email: "luxurynest.llp@gmail.com",
 
-  hours: "Tuesday – Monday: 10:00 AM – 7:00 PM",
+  hours: "Monday – Sunday: 8:00 AM – 7:00 PM",
 
   experience: "5+Years",
   familiesServed: "500+",
