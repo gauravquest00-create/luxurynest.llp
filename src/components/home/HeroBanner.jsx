@@ -15,19 +15,19 @@ export default function HeroBanner() {
         
         <div className="hero-buttons">
           <button 
-            className="hero-btn primary"
+            className="hero-btn"
             onClick={() => navigate('/properties')}
           >
             {siteConfig.cta?.primary || "Explore Properties"}
           </button>
           <button 
-            className="hero-btn secondary"
+            className="hero-btn"
             onClick={() => navigate('/new-launches')}
           >
             🚀 New Launches
           </button>
           <button 
-            className="hero-btn secondary"
+            className="hero-btn"
             onClick={() => navigate('/construction')}
           >
             🏗️ Construction
