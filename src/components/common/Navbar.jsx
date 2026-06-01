@@ -84,7 +84,7 @@ export default function Navbar() {
               >
                 {siteConfig.businessName}
               </p>
-              <p
+              {/* <p
                 style={{
                   color: "#D4AF37",
                   fontSize: "0.75rem",
@@ -92,8 +92,8 @@ export default function Navbar() {
                   lineHeight: 1.25,
                 }}
               >
-                RERA Register
-              </p>
+                
+              </p> */}
             </div>
           </Link>
 
