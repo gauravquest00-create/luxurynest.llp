@@ -9,6 +9,7 @@
       "price": "₹2.5 Cr onwards",
       "priceNum": 25000000,
       "type": "Luxury Apartments",
+      "category": "residential",
       "image": "/projects/dlf-valley.jpg",
       "status": "New Launch",
       "rera": "DLF/GM/2024/001"
@@ -22,6 +23,7 @@
       "price": "₹1.8 Cr onwards",
       "priceNum": 18000000,
       "type": "Premium Floors",
+      "category": "residential",
       "image": "/projects/godrej-air.jpg",
       "status": "Pre-Launch",
       "rera": "GODREJ/GM/2024/002"
@@ -35,6 +37,7 @@
       "price": "₹3.2 Cr onwards",
       "priceNum": 32000000,
       "type": "Luxury Villas",
+      "category": "residential",
       "image": "/projects/m3m-golf.jpg",
       "status": "New Launch",
       "rera": "M3M/GM/2024/003"
@@ -48,6 +51,7 @@
       "price": "₹75 Lakhs onwards",
       "priceNum": 7500000,
       "type": "Smart Homes",
+      "category": "residential",
       "image": "/projects/emaar-digi.jpg",
       "status": "Launching Soon",
       "rera": "EMAAR/GM/2024/004"
@@ -61,6 +65,7 @@
       "price": "₹65 Lakhs onwards",
       "priceNum": 6500000,
       "type": "Affordable Homes",
+      "category": "residential",
       "image": "/projects/signature.jpg",
       "status": "New Launch",
       "rera": "SIGNATURE/GM/2024/005"
@@ -74,9 +79,38 @@
       "price": "₹1.2 Cr onwards",
       "priceNum": 12000000,
       "type": "Apartments",
+      "category": "residential",
       "image": "/projects/prestige.jpg",
       "status": "Pre-Launch",
       "rera": "PRESTIGE/GM/2024/006"
+    },
+    {
+      "id": 7,
+      "name": "DLF Corporate Tower",
+      "location": "Sector 74",
+      "sector": "74",
+      "area": "Gurugram",
+      "price": "₹8 Cr onwards",
+      "priceNum": 80000000,
+      "type": "Commercial Offices",
+      "category": "commercial",
+      "image": "/projects/dlf-corporate.jpg",
+      "status": "New Launch",
+      "rera": "DLF/GM/2024/007"
+    },
+    {
+      "id": 8,
+      "name": "M3M Commercial Hub",
+      "location": "Sector 68",
+      "sector": "68",
+      "area": "Gurugram",
+      "price": "₹12 Cr onwards",
+      "priceNum": 120000000,
+      "type": "Retail Spaces",
+      "category": "commercial",
+      "image": "/projects/m3m-commercial.jpg",
+      "status": "Launching Soon",
+      "rera": "M3M/GM/2024/008"
     }
   ]
 }
