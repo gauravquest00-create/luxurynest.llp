@@ -15,8 +15,7 @@ const propertyLinks = [
   { label: "Flats for Rent", path: "/properties?type=rent" },
   { label: "Plot", path: "/properties?type=plot" },
   { label: "Builder Floor", path: "/properties?type=builder" },
-  { label: "2BHK Properties", path: "/properties?bhk=2" },
-  { label: "3BHK Properties", path: "/properties?bhk=3" },
+ 
   
 ];
 
