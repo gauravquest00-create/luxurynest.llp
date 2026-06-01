@@ -5,7 +5,7 @@ const siteConfig = {
   tagline: "Your Property, Our Priority",
 
   description:
-    "LuxuryNest is Gurugram’s trusted real estate agency, helping families find their perfect home with verified listings and expert guidance.",
+    "LuxuryNest is Gurugram's trusted real estate agency, helping families find their perfect home with verified listings and expert guidance.",
 
   rera: "RERA/GM/2024/387/33",
 
@@ -55,8 +55,8 @@ const siteConfig = {
   whatsappMessage:
     "Hi, I found your website and I'm interested in a property. Can you help me?",
 
-  // ✨ New fields for the LuxuryNest project
-  logo: "public/logo.jpeg",  // place a logo.png in public/ folder
+  // ✅ FIXED: Changed from "public/logo.jpeg" to "/logo.jpeg"
+  logo: "/logo.jpeg",
 
   cta: {
     primary: "Explore Properties",
