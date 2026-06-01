@@ -21,7 +21,7 @@ const siteConfig = {
   hours: "Tuesday – Monday: 10:00 AM – 7:00 PM",
 
   experience: "5 Years",
-  familiesServed: "300+",
+  familiesServed: "500+",
   propertiesListed: "100+",
   satisfaction: "98%",
 
