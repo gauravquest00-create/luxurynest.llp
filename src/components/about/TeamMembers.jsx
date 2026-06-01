@@ -15,7 +15,6 @@ export default function TeamMembers() {
               <h3 className="team-name">{member.name}</h3>
               <p className="team-role">{member.role}</p>
               <p className="team-experience">📅 {member.experience} experience</p>
-              <p className="team-rera">🏢 RERA: {member.rera}</p>
               <p className="team-bio">{member.bio}</p>
               <a href={`tel:${member.phone}`} className="team-phone">📞 {member.phone}</a>
             </div>
