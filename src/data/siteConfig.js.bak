@@ -7,7 +7,7 @@ const siteConfig = {
   description:
     "LuxuryNest is Gurugram’s trusted real estate agency, helping families find their perfect home with verified listings and expert guidance.",
 
-  rera: "RERA/GM/2024/387/33",
+  rera: "",
 
   address: "D-43, Sector XX, Gurugram, Haryana 122001, India",
 
