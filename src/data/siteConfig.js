@@ -19,7 +19,7 @@ From luxury apartments and builder floors to commercial spaces and residential p
   address: "Plot 469, Sector 43, Gurugram, Haryana 122001, India",
 
   phone: "+919650796186 ",
-  phoneDisplay: "+91 9650796186 & 919667435358",
+  phoneDisplay: "+91 9650796186 & +91 9667435358",
 
   whatsapp: "919667435358", // IMPORTANT: no + or spaces (for wa.me)
 
