@@ -9,6 +9,8 @@ const navLinks = [
   { label: "NewLaunches", path: "/new-launches" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
+  { label: "construction", path: "/construction" },
+  
 ];
 
 export default function Navbar() {
