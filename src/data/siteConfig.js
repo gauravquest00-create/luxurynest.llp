@@ -9,7 +9,7 @@ const siteConfig = {
 
   rera: "RERA/GM/2024/387/33",
 
-  address: "D-43, Sector XX, Gurugram, Haryana 122001, India",
+  address: "Plot 469,Sector 43, Gurugram, Haryana 122001, India",
 
   phone: "+919650796186 ",
   phoneDisplay: "+91 9650796186 & 919667435358",
@@ -43,7 +43,7 @@ const siteConfig = {
   seo: {
     title: "LuxuryNest — Buy & Rent Flats in Gurugram",
     description:
-      "Buy or rent flats, houses & shops in Gurugram. 200+ families served. Verified properties. Call +91 96507 96186.",
+      "Buy or rent flats, houses & shops in Gurugram. 500+ families served. Verified properties. Call +91 96507 96186.",
     keywords:
       "property in gurugram, flats in gurgaon, buy flat gurugram, rent flat gurugram, 2bhk gurugram, 3bhk gurugram, LuxuryNest",
     ogImage: "/assets/og-image.jpg",
