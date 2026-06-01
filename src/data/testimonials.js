@@ -25,8 +25,8 @@ const testimonials = [
   },
   {
     id    : 4,
-    name  : "Sunita Agarwal",
-    role  : "Sold 4BHK in Sector 4",
+    name  : "Priti",
+    role  : "Sold 3BHK in Emaar Palm Garden",
     review: "Got the best price for our property. Abhishek rastagi ji handled all paperwork and legal formalities. Truly the best property dealer in Gurugram.",
     rating: 5,
     avatar: "SA",
