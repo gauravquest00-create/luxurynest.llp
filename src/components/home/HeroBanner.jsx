@@ -8,7 +8,7 @@ export default function HeroBanner() {
     <section className="hero-banner">
       <div className="hero-container">
         <h1 className="hero-title">{siteConfig.tagline}</h1>
-        <p className="hero-description">{siteConfig.description}</p>
+        <p className="hero-description">LuxuryNest is Gurugram's trusted real estate agency, helping families and investors find their perfect property with verified listings and expert guidance</p>
         <button 
           className="hero-btn"
           onClick={() => navigate('/properties')}
