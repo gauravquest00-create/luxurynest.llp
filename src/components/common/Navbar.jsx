@@ -6,6 +6,7 @@ import siteConfig from "../../data/siteConfig";
 const navLinks = [
   { label: "Home", path: "/" },
   { label: "Properties", path: "/properties" },
+  { label: "NewLaunches", path: "/new-launches" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
 ];
