@@ -1,11 +1,29 @@
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import properties from '../../data/properties';
 import { slugify } from '../../utils/slugify';
-// import './FeaturedProperties.css';
 
 export default function FeaturedProperties() {
-  // Take first 3 properties as featured
-  const featured = properties.slice(0, 3);
+  const [featured, setFeatured] = useState([]);
+
+  useEffect(() => {
+    // Function to get random unique properties
+    const getRandomProperties = (count = 3) => {
+      // Shallow copy the array
+      const shuffled = [...properties];
+      
+      // Fisher-Yates shuffle algorithm
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      
+      // Return first 'count' items
+      return shuffled.slice(0, count);
+    };
+
+    setFeatured(getRandomProperties(3));
+  }, []); // Re-runs on page refresh
 
   const formatPrice = (priceNum, priceStr) => {
     if (priceNum) {
@@ -18,13 +36,25 @@ export default function FeaturedProperties() {
     return priceStr || 'Price on request';
   };
 
+  // Loading state (optional)
+  if (featured.length === 0) {
+    return (
+      <section className="featured-properties">
+        <div className="featured-container">
+          <h2 className="section-title">Featured Properties</h2>
+          <p className="section-subtitle">Loading amazing properties...</p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="featured-properties">
       <div className="featured-container">
         <h2 className="section-title">Featured Properties</h2>
         <p className="section-subtitle">Handpicked properties just for you</p>
         <div className="featured-grid">
-          {featured.map((prop) => (   // ✅ changed from 'property' to 'prop' to avoid confusion
+          {featured.map((prop) => (
             <div key={prop.id} className="property-card">
               <img src={prop.image} alt={prop.title} className="property-img" />
               {prop.badge && <span className="property-badge">{prop.badge}</span>}
