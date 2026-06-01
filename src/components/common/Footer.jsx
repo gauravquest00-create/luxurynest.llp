@@ -136,7 +136,7 @@ export default function Footer() {
         <div className="footer-bottom-container">
           <p className="copyright">© {currentYear} {siteConfig.businessName}. All rights reserved.</p>
           <p className="made-by">Made by Gaurav</p>
-          <p className="rera-text">RERA Reg: {siteConfig.rera}</p>
+          <p className="rera-text">RERA Reg:</p>
         </div>
       </div>
     </footer>
