@@ -3,22 +3,20 @@ const teamMembers = [
     id: 1,
     name: "Sandeep Goyal",
     role: "Founder & Senior Property Advisor",
-    experience: "4 Years",
-    rera: "RERA/GM/2024/387/34",
+    experience: "8 Years",
     phone: "919650796186",
     avatar: "SG",
-    image: "/abhishek.jpeg",
+    image: "/SandeepGoyal.jpeg",
 
 
-    bio: "With 4 years of experience in Gurugram real estate, Sandeep Goyal has helped 200+ families find their dream homes in Gurugram and surrounding areas.",
+    bio: "With 8 years of experience in Gurugram real estate, Sandeep Goyal has helped 200+ families find their dream homes in Gurugram and surrounding areas.",
   },
 
   {
     id: 2,
     name: "Abhishek Rastogi",
     role: "Founder & Senior Property Advisor",
-    experience: "3 Years",
-    rera: "RERA/GM/2024/387/34",
+    experience: "6 Years",
     phone: "919667435358",
     avatar: "AR",
     image: "/abhishek.jpeg",
