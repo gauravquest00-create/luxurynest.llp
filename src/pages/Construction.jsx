@@ -469,7 +469,7 @@ export default function Construction() {
                   marginBottom: '1.5rem',
                   border: '1px solid #bbf7d0'
                 }}>
-                  <h3 style={{ fontWeight: 'bold', marginBottom: '0.5rem }}>💰 Price Estimate</h3>
+                  <h3 style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>💰 Price Estimate</h3>
                   <div style={{ fontSize: '0.875rem', lineHeight: '1.6' }}>
                     <p>📐 Plot Area: <strong>{formData.plotSize} {formData.plotUnit}</strong> = <strong>{priceEstimate.areaSqft.toFixed(0)} sqft</strong></p>
                     <p>🏗️ Floors: <strong>{formData.floors}</strong> + Ground Floor = <strong>{priceEstimate.floors + 1}</strong> levels</p>
