@@ -1,7 +1,7 @@
 
 const features = [
   { title: "RERA Registered", description: "Fully compliant with RERA, ensuring transparency.", icon: "🏢" },
-  { title: "12+ Years Experience", description: "Deep knowledge of Dwarka's real estate market.", icon: "📅" },
+  { title: "8+ Years Experience", description: "Deep knowledge of NCR's real estate market.", icon: "📅" },
   { title: "500+ Families Served", description: "Happy homeowners and investors trust us.", icon: "🏠" },
   { title: "Best Price Guarantee", description: "We help you get the best deal possible.", icon: "💰" },
 ];
@@ -11,7 +11,7 @@ export default function WhyChooseUs() {
     <section className="why-choose-us">
       <div className="why-container">
         <h2 className="section-title">Why Choose LuxuryNest?</h2>
-        <p className="section-subtitle">Your trusted partner in real estate since 2021</p>
+        <p className="section-subtitle">Your trusted partner in real estate </p>
         <div className="features-grid">
           {features.map((f, idx) => (
             <div key={idx} className="feature-card">
