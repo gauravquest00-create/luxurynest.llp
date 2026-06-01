@@ -92,17 +92,17 @@ export default function FilterBar({ onFilterChange, initialFilters }) {
         <div className="filter-group">
           <label>Property Type</label>
           <select value={filters.type} onChange={(e) => handleChange('type', e.target.value)}>
-            <option value="all">All</option>
-            <option value="sale">For Resale</option>
+            <option value="all">All Properties</option>
+            <option value="sale">For Sale (Resale)</option>
             <option value="rent">For Rent</option>
-            <option value="sale">For Builder floor</option>
-            <option value="rent">For Plot</option>
+            <option value="builder">Builder Floor</option>
+            <option value="plot">Plot / Land</option>
           </select>
         </div>
         <div className="filter-group">
           <label>BHK</label>
           <select value={filters.bhk} onChange={(e) => handleChange('bhk', e.target.value)}>
-            <option value="all">All</option>
+            <option value="all">All BHK</option>
             <option value="1">1 BHK</option>
             <option value="2">2 BHK</option>
             <option value="3">3 BHK</option>
@@ -111,11 +111,21 @@ export default function FilterBar({ onFilterChange, initialFilters }) {
         </div>
         <div className="filter-group">
           <label>Min Price (₹)</label>
-          <input type="number" placeholder="e.g., 5000000" value={filters.minPrice} onChange={(e) => handleChange('minPrice', e.target.value)} />
+          <input 
+            type="number" 
+            placeholder="e.g., 5000000" 
+            value={filters.minPrice} 
+            onChange={(e) => handleChange('minPrice', e.target.value)} 
+          />
         </div>
         <div className="filter-group">
           <label>Max Price (₹)</label>
-          <input type="number" placeholder="e.g., 20000000" value={filters.maxPrice} onChange={(e) => handleChange('maxPrice', e.target.value)} />
+          <input 
+            type="number" 
+            placeholder="e.g., 20000000" 
+            value={filters.maxPrice} 
+            onChange={(e) => handleChange('maxPrice', e.target.value)} 
+          />
         </div>
       </div>
     </div>
