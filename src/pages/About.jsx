@@ -14,7 +14,7 @@ export default function About() {
                     Luxurynest</h1>
                 <p className="about-description">{siteConfig.description}</p>
                 <StatsRow />
-                <OwnerProfile />
+                {/* <OwnerProfile /> */}
                 <TeamMembers />
 
                 <RERABadge />
