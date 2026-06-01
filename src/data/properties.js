@@ -158,15 +158,15 @@ const properties = [
   },
   amenities: ["Swimming Pool", "Gym", "Club House", "24x7 Security", "Park", "Community Hall", "Kids Play Area", "Pet Friendly", "Power Backup"],
   propertyFeatures: ["Low Rise", "Private Terrace", "Top Floor Unit", "Basement Covered Parking", "Wide Roads", "Gated Society"],
-  image: "public/solitude_3bhk_rent/image1.jpg",
-  images: [
-    "public/solitude_3bhk_rent/image1.jpg",
-    "public/solitude_3bhk_rent/image2.jpg",
-    "public/solitude_3bhk_rent/image3.jpg",
-    "public/solitude_3bhk_rent/image4.jpg",
-    "public/solitude_3bhk_rent/image5.jpg",
-    "public/solitude_3bhk_rent/image6.jpg",
-  ]
+ image: "/solitude_3bhk_rent/image1.jpg",
+images: [
+  "/solitude_3bhk_rent/image1.jpg",
+  "/solitude_3bhk_rent/image2.jpg",
+  "/solitude_3bhk_rent/image3.jpg",
+  "/solitude_3bhk_rent/image4.jpg",
+  "/solitude_3bhk_rent/image5.jpg",
+  "/solitude_3bhk_rent/image6.jpg",
+]
 },
 {
   id: 6,
@@ -194,14 +194,14 @@ const properties = [
   },
   amenities: ["Swimming Pool", "Gym", "Club House", "24x7 Security", "Park", "Community Hall", "Kids Play Area", "Pet Friendly", "Power Backup"],
   propertyFeatures: ["Low Rise", "Private Terrace", "Top Floor Unit", "Basement Covered Parking", "Wide Roads", "Gated Society", "Balcony"],
-  image: "public/solitude_3bhk_rent/image1.jpg",
+  image: "/solitude_3bhk_rent/image1.jpg",
   images: [
-    "public/solitude_3bhk_rent/image1.jpg",
-    "public/solitude_3bhk_rent/image2.jpg",
-    "public/solitude_3bhk_rent/image3.jpg",
-    "public/solitude_3bhk_rent/image4.jpg",
-    "public/solitude_3bhk_rent/image5.jpg",
-    "public/solitude_3bhk_rent/image6.jpg",
+    "/solitude_3bhk_rent/image1.jpg",
+    "/solitude_3bhk_rent/image2.jpg",
+    "/solitude_3bhk_rent/image3.jpg",
+    "/solitude_3bhk_rent/image4.jpg",
+    "/solitude_3bhk_rent/image5.jpg",
+    "/solitude_3bhk_rent/image6.jpg",
   ]
 },
 {
@@ -230,12 +230,12 @@ const properties = [
   },
   amenities: ["Swimming Pool", "Gym", "Club House", "24x7 Security", "Power Backup", "Lift", "Park", "Jogging Track", "Community Hall"],
   propertyFeatures: ["High Rise Tower", "Corner Unit", "Wide Balcony", "Modular Layout", "Gated Society", "Covered Parking"],
-  image: "public/vatika/image1.jpg",
+  image: "/vatika/image1.jpg",
   images: [
-    "public/vatika/image1.jpg",
-    "public/vatika/image2.jpg",
-    "public/vatika/image3.jpg",
-    "public/vatika/image4.jpg",
+    "/vatika/image1.jpg",
+    "/vatika/image2.jpg",
+    "/vatika/image3.jpg",
+    "/vatika/image4.jpg",
     
   ]
 },
