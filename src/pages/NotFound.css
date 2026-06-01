@@ -1,0 +1,153 @@
+/* src/pages/NotFound.css */
+
+.notfound-container {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #f9fafb, #f3f4f6);
+  padding: 1rem;
+}
+
+.notfound-content {
+  text-align: center;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+/* 404 Number Styles */
+.notfound-number-container {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.notfound-number {
+  font-size: 8rem;
+  font-weight: bold;
+  color: #1F3556;
+  opacity: 0.1;
+}
+
+@media (min-width: 768px) {
+  .notfound-number {
+    font-size: 9rem;
+  }
+}
+
+.notfound-icon-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notfound-icon {
+  font-size: 4rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .notfound-icon {
+    font-size: 4.5rem;
+  }
+}
+
+.notfound-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .notfound-title {
+    font-size: 1.875rem;
+  }
+}
+
+/* Card Styles */
+.notfound-card {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.notfound-message {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+}
+
+/* Button Styles */
+.notfound-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .notfound-buttons {
+    flex-direction: row;
+  }
+}
+
+.btn-home {
+  padding: 0.75rem 1.5rem;
+  background-color: #1F3556;
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-home:hover {
+  background-color: #15263f;
+  transform: scale(1.05);
+}
+
+.btn-properties {
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: #1F3556;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  border: 2px solid #1F3556;
+  cursor: pointer;
+}
+
+.btn-properties:hover {
+  background-color: #1F3556;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Redirect Text */
+.redirect-text {
+  font-size: 0.875rem;
+  color: #6b7280;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
