@@ -27,7 +27,7 @@ From luxury apartments and builder floors to commercial spaces and residential p
 
   hours: "Tuesday – Monday: 10:00 AM – 7:00 PM",
 
-  experience: "5 Years",
+  experience: "5+Years",
   familiesServed: "500+",
   propertiesListed: "100+",
   satisfaction: "98%",
