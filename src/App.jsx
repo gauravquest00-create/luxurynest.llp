@@ -12,6 +12,8 @@ import PropertyDetail from "./pages/PropertyDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import NewLaunches from "./pages/NewLaunches";
+
 
 // Inner component that uses useLocation (must be inside BrowserRouter)
 function AppContent() {
@@ -38,6 +40,8 @@ function AppContent() {
         <Route path="/properties/:title" element={<PropertyDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/new-launches" element={<NewLaunches />} />
+
         
         {/* 404 Route - Catch all unmatched routes */}
         <Route path="*" element={<NotFound />} />
