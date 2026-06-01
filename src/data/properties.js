@@ -362,7 +362,7 @@ images: [
   title: "3BHK + SQ Apartment in Bestech Sanskruti",
   society: "Bestech Sanskruti",
   type: "sale",
-  price: "₹2.40 Cr",
+  price: "₹2.32 Cr",
   priceNum: 24000000,
   location: "Sector 92, Gurugram",
   bhk: 3,
