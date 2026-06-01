@@ -26,11 +26,15 @@ const properties = [
   },
   amenities: ["Swimming Pool", "Gym", "Club House", "24x7 Security", "Park", "Community Hall", "Kids Play Area", "Pet Friendly", "Power Backup"],
   propertyFeatures: ["Low Rise", "Private Terrace", "Basement Covered Parking", "Wide Roads", "Gated Society"],
-  image: "https://example.com/main.jpg",
-  images: [
-    "https://example.com/img1.jpg",
-    "https://example.com/img2.jpg",
-    "https://example.com/img3.jpg"
+  image: "/gems/gems1.jpg",
+    images: [
+    "/gems/gems1.jpg",
+    "/gems/gems2.jpg",
+    "/gems/gems3.jpg",
+    "/gems/gems4.jpg",
+    "/gems/gems5.jpg",
+    "/gems/gems6.jpg",
+    "/gems/gems7.jpg"
   ]
 },
 {
@@ -59,11 +63,15 @@ const properties = [
   },
   amenities: ["Swimming Pool", "Gym", "Club House", "24x7 Security", "Park", "Community Hall", "Kids Play Area", "Pet Friendly", "Power Backup"],
   propertyFeatures: ["Low Rise", "Private Terrace", "Top Floor Unit", "Basement Covered Parking", "Wide Roads", "Gated Society"],
-  image: "https://example.com/main2.jpg",
-  images: [
-    "https://example.com/img4.jpg",
-    "https://example.com/img5.jpg",
-    "https://example.com/img6.jpg"
+ image: "/gems/gems1.jpg",
+    images: [
+    "/gems/gems1.jpg",
+    "/gems/gems2.jpg",
+    "/gems/gems3.jpg",
+    "/gems/gems4.jpg",
+    "/gems/gems5.jpg",
+    "/gems/gems6.jpg",
+    "/gems/gems7.jpg"
   ]
 },
 {
@@ -92,11 +100,15 @@ const properties = [
   },
   amenities: ["Swimming Pool", "Gym", "Club House", "24x7 Security", "Park", "Community Hall", "Kids Play Area", "Pet Friendly", "Power Backup"],
   propertyFeatures: ["Low Rise", "Basement Covered Parking", "Wide Roads", "Gated Society", "Balcony"],
-  image: "https://example.com/rent1_main.jpg",
-  images: [
-    "https://example.com/rent1_1.jpg",
-    "https://example.com/rent1_2.jpg",
-    "https://example.com/rent1_3.jpg"
+  image: "/gems/gems1.jpg",
+    images: [
+    "/gems/gems1.jpg",
+    "/gems/gems2.jpg",
+    "/gems/gems3.jpg",
+    "/gems/gems4.jpg",
+    "/gems/gems5.jpg",
+    "/gems/gems6.jpg",
+    "/gems/gems7.jpg"
   ]
 },
 {
@@ -125,11 +137,15 @@ const properties = [
   },
   amenities: ["Swimming Pool", "Gym", "Club House", "24x7 Security", "Park", "Community Hall", "Kids Play Area", "Pet Friendly", "Power Backup"],
   propertyFeatures: ["Low Rise", "Basement Covered Parking", "Wide Roads", "Gated Society", "Balcony"],
-  image: "https://example.com/rent2_main.jpg",
-  images: [
-    "https://example.com/rent2_1.jpg",
-    "https://example.com/rent2_2.jpg",
-    "https://example.com/rent2_3.jpg"
+ image: "/gems/gems1.jpg",
+    images: [
+    "/gems/gems1.jpg",
+    "/gems/gems2.jpg",
+    "/gems/gems3.jpg",
+    "/gems/gems4.jpg",
+    "/gems/gems5.jpg",
+    "/gems/gems6.jpg",
+    "/gems/gems7.jpg"
   ]
 },
 {
