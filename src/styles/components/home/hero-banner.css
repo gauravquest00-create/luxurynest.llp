@@ -36,7 +36,7 @@
   flex-wrap: wrap;
 }
 
-/* All buttons have SAME style */
+/* ALL buttons have SAME style - Gold background */
 .hero-btn {
   background-color: #D4AF37; /* Gold */
   color: #1F3556; /* Navy text */
@@ -50,7 +50,7 @@
   font-family: inherit;
 }
 
-/* Same hover effect for ALL buttons */
+/* ALL buttons have SAME hover effect */
 .hero-btn:hover {
   background-color: #B8962C; /* Darker gold */
   transform: translateY(-2px);
