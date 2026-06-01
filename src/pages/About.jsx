@@ -12,7 +12,7 @@ export default function About() {
                 <BackButton />
                 <StatsRow />
                 <h1 className="about-title">
-                    Luxurynest</h1>
+                    LuxuryNest</h1>
                 <p className="about-description">{siteConfig.description}</p>
                 {/* <OwnerProfile /> */}
                 <TeamMembers />
