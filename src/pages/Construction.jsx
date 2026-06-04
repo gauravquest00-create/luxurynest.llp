@@ -51,7 +51,7 @@ export default function Construction() {
       shortDesc: "Structure with plaster - Complete civil work",
       description: "Complete civil work including foundation, walls, beams, columns, and plastering. This is the basic structure of your building ready for further finishing.",
       includes: ["Foundation", "Wall Construction", "Beams & Columns", "Roof Casting", "Plastering", "Basic Flooring"],
-      excludes: ["Interior Design", "Modular Kitchen", "False Ceiling", "Woodwork", "Painting"],
+      excludes: ["Interior Design", "Modular Kitchen", "False Ceiling", "Woodwork", "Paint Works"],
       priceNote: "Price includes only civil structure with plaster. Interior and finishing work will be charged separately."
     },
     {
@@ -60,8 +60,8 @@ export default function Construction() {
       icon: "🔑",
       shortDesc: "Ready to move construction with interior",
       description: "Complete home from foundation to finishing - just bring your luggage and move in! Everything is included from structure to interior.",
-      includes: ["Civil Structure", "Plumbing", "Electrical","modular kitchen","Facade", "Interior Design", "Modular Kitchen", "False Ceiling", "Woodwork", "Well Paints", "Bathroom Fittings"],
-      excludes: ["Interior Depends on Requirement"],
+      includes: ["Civil Structure", "Plumbing", "Electrical","Facade Ready", "Interior Design", "Modular Kitchen", "False Ceiling", "Woodwork", "Entire Paints/Texture", "Bathroom Fittings"],
+      excludes: ["Interior Rates Depends on Requirement"],
       priceNote: "⚠️ NOTE: The estimated price is for Basic Civil Construction. Interior cost depends on your specific requirements, design choices, and material preferences. Final interior cost will be shared after detailed discussion."
     },
     {
@@ -70,8 +70,8 @@ export default function Construction() {
       icon: "🏠",
       shortDesc: "Upgrade from civil - Basic structure ready",
       description: "Basic structure is ready with plaster. You need finishing work including flooring, painting, bathroom fittings, and interiors.",
-      includes: ["Basic Structure Ready", "Plaster Done", "Flooring", "Well Paint", "Bathroom Fitting"],
-      excludes: ["Furniture", "ACs", "Appliances", "Electronics"],
+      includes: ["Basic Structure Ready", "Plaster Done", "Flooring", "Paint Works", "Bathroom Fitting","Electrical Fitting"],
+      excludes: ["Interior Designs","Furniture", "Appliances", "Electronics"],
       priceNote: "Upgrade cost depends on the finishing quality and materials you choose."
     }
   ];
