@@ -33,11 +33,10 @@ export default function NewLaunches() {
     budget: ''
   });
 
-  // Looking for options
+  // Looking for options - ONLY Residential & Commercial
   const lookingForOptions = [
     { id: 'residential', label: '🏠 Residential' },
-    { id: 'commercial', label: '🏢 Commercial' },
-
+    { id: 'commercial', label: '🏢 Commercial' }
   ];
 
   // Budget options
@@ -62,16 +61,28 @@ export default function NewLaunches() {
   // Submit to Google Sheet
   const submitToSheet = async (payload) => {
     setIsSubmitting(true);
+    setError('');
+    
     try {
+      console.log('Submitting to sheet:', payload);
+      
       const response = await fetch(APPS_SCRIPT_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(payload).toString(),
+        mode: 'no-cors', // Important for Google Apps Script
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(payload).toString()
       });
-      const result = await response.json();
-      console.log('New Launch lead submitted:', result);
+      
+      console.log('Response received:', response);
+      
+      // Since no-cors doesn't give response data, assume success
+      return { status: 'success' };
+      
     } catch (error) {
-      console.error('Error submitting lead:', error);
+      console.error('Error submitting to sheet:', error);
+      throw error;
     } finally {
       setIsSubmitting(false);
     }
@@ -80,6 +91,7 @@ export default function NewLaunches() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    // Validation
     if (!isValidName(formData.name)) {
       setError('Name must be at least 2 letters');
       return;
@@ -92,7 +104,7 @@ export default function NewLaunches() {
       setError('Mobile must be 10 digits & start with 6,7,8,9');
       return;
     }
-    if (!formData.location) {
+    if (!formData.location.trim()) {
       setError('Please enter preferred location');
       return;
     }
@@ -101,23 +113,35 @@ export default function NewLaunches() {
       return;
     }
 
-    await submitToSheet({
-      type: 'new_launch_enquiry',
-      name: formData.name.trim(),
-      email: formData.email.trim(),
-      phone: formData.phone.replace(/\D/g, ''),
-      lookingFor: formData.lookingFor,
-      location: formData.location,
-      budget: formData.budget,
-      source: 'New Launches Page',
-      timestamp: new Date().toISOString()
-    });
-    
-    setShowThankYou(true);
-    
-    setTimeout(() => {
-      navigate('/');
-    }, 3000);
+    try {
+      // Prepare payload for Google Sheet
+      const payload = {
+        type: 'new_launch_enquiry',
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.replace(/\D/g, ''),
+        lookingFor: formData.lookingFor === 'residential' ? 'Residential' : 'Commercial',
+        location: formData.location.trim(),
+        budget: formData.budget,
+        source: 'New Launches Page',
+        timestamp: new Date().toISOString(),
+        formType: 'New Launch Enquiry'
+      };
+      
+      await submitToSheet(payload);
+      
+      console.log('Lead saved successfully');
+      setShowThankYou(true);
+      
+      // Redirect to home after 3 seconds
+      setTimeout(() => {
+        navigate('/');
+      }, 3000);
+      
+    } catch (error) {
+      console.error('Submission error:', error);
+      setError('Something went wrong. Please try again or contact us directly.');
+    }
   };
 
   return (
@@ -146,10 +170,10 @@ export default function NewLaunches() {
               Thank You, {formData.name}!
             </h2>
             <p style={{ fontSize: '0.9rem', color: '#4b5563', marginBottom: '0.5rem' }}>
-              We have received your requirements.
+              We have received your requirements for {formData.lookingFor === 'residential' ? '🏠 Residential' : '🏢 Commercial'} property.
             </p>
             <p style={{ fontSize: '0.85rem', color: '#6b7280' }}>
-              Our real estate expert will contact you shortly with the best new launch options.
+              Our real estate expert will contact you shortly with the best new launch options in {formData.location}.
             </p>
             <p style={{ marginTop: '1rem', fontSize: '0.8rem', color: '#9ca3af' }}>
               Redirecting to home page...
@@ -166,12 +190,12 @@ export default function NewLaunches() {
             boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
           }}>
             <form onSubmit={handleSubmit}>
-              {/* Looking For */}
+              {/* Looking For - Only Residential & Commercial */}
               <div style={{ marginBottom: '1.5rem' }}>
                 <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: '#1f2937' }}>
                   I am looking for *
                 </label>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '0.75rem' }}>
+                <div style={{ display: 'flex', gap: '1rem' }}>
                   {lookingForOptions.map(option => (
                     <label
                       key={option.id}
@@ -179,11 +203,13 @@ export default function NewLaunches() {
                         display: 'flex',
                         alignItems: 'center',
                         gap: '0.5rem',
-                        padding: '0.5rem',
-                        border: formData.lookingFor === option.id ? '2px solid #1e3a8a' : '1px solid #e5e7eb',
+                        padding: '0.75rem 1.5rem',
+                        border: formData.lookingFor === option.id ? '2px solid #D4AF37' : '1px solid #e5e7eb',
                         borderRadius: '0.5rem',
                         cursor: 'pointer',
-                        backgroundColor: formData.lookingFor === option.id ? '#f0f4ff' : 'white'
+                        backgroundColor: formData.lookingFor === option.id ? '#fef8e7' : 'white',
+                        flex: 1,
+                        justifyContent: 'center'
                       }}
                     >
                       <input
@@ -192,8 +218,9 @@ export default function NewLaunches() {
                         value={option.id}
                         checked={formData.lookingFor === option.id}
                         onChange={handleInputChange}
+                        style={{ marginRight: '0.5rem' }}
                       />
-                      <span style={{ fontSize: '0.9rem' }}>{option.label}</span>
+                      <span style={{ fontSize: '1rem' }}>{option.label}</span>
                     </label>
                   ))}
                 </div>
@@ -317,7 +344,18 @@ export default function NewLaunches() {
                 />
               </div>
 
-              {error && <p style={{ color: '#ef4444', fontSize: '0.8rem', marginBottom: '1rem' }}>{error}</p>}
+              {error && (
+                <div style={{
+                  backgroundColor: '#fee2e2',
+                  color: '#dc2626',
+                  padding: '0.75rem',
+                  borderRadius: '0.5rem',
+                  marginBottom: '1rem',
+                  fontSize: '0.85rem'
+                }}>
+                  {error}
+                </div>
+              )}
 
               <button
                 type="submit"
@@ -340,6 +378,10 @@ export default function NewLaunches() {
               >
                 {isSubmitting ? 'Submitting...' : 'Get New Launch Updates →'}
               </button>
+              
+              <p style={{ textAlign: 'center', fontSize: '0.7rem', color: '#9ca3af', marginTop: '1rem' }}>
+                We respect your privacy. No spam, ever.
+              </p>
             </form>
           </div>
         )}
