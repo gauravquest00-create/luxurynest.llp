@@ -57,7 +57,7 @@ export default function HeroBanner() {
         {/* 📊 STATS */}
         <div className="hero-stats">
           <div className="stat">
-            <span className="stat-value">5+</span>
+            <span className="stat-value">8+</span>
             <span className="stat-label">Years in Gurugram</span>
           </div>
           <div className="stat">
