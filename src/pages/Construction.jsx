@@ -60,8 +60,8 @@ export default function Construction() {
       icon: "🔑",
       shortDesc: "Ready to move construction with interior",
       description: "Complete home from foundation to finishing - just bring your luggage and move in! Everything is included from structure to interior.",
-      includes: ["Civil Structure", "Plumbing", "Electrical", "Interior Design", "Modular Kitchen", "False Ceiling", "Woodwork", "Painting", "Bathroom Fittings"],
-      excludes: ["Interior Depand on Requirement"],
+      includes: ["Civil Structure", "Plumbing", "Electrical","modular kitchen","Facade", "Interior Design", "Modular Kitchen", "False Ceiling", "Woodwork", "Well Paints", "Bathroom Fittings"],
+      excludes: ["Interior Depends on Requirement"],
       priceNote: "⚠️ NOTE: The estimated price is for Basic Civil Construction. Interior cost depends on your specific requirements, design choices, and material preferences. Final interior cost will be shared after detailed discussion."
     },
     {
@@ -70,7 +70,7 @@ export default function Construction() {
       icon: "🏠",
       shortDesc: "Upgrade from civil - Basic structure ready",
       description: "Basic structure is ready with plaster. You need finishing work including flooring, painting, bathroom fittings, and interiors.",
-      includes: ["Basic Structure Ready", "Plaster Done", "Need Flooring", "Need Painting", "Need Bathroom Fitting"],
+      includes: ["Basic Structure Ready", "Plaster Done", "Flooring", "Well Paint", "Bathroom Fitting"],
       excludes: ["Furniture", "ACs", "Appliances", "Electronics"],
       priceNote: "Upgrade cost depends on the finishing quality and materials you choose."
     }
