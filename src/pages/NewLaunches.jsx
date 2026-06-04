@@ -37,8 +37,7 @@ export default function NewLaunches() {
   const lookingForOptions = [
     { id: 'residential', label: '🏠 Residential' },
     { id: 'commercial', label: '🏢 Commercial' },
-    { id: 'plot', label: '📐 Plot/Land' },
-    { id: 'builder-floor', label: '🏗️ Builder Floor' }
+
   ];
 
   // Budget options
