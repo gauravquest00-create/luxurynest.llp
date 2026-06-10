@@ -134,7 +134,13 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="footer-bottom-container">
           <p className="copyright">© {currentYear} {siteConfig.businessName}. All rights reserved.</p>
-          <p className="made-by">Made by Gaurav</p>
+          <p className="made-by">
+  Made by <a 
+    href="https://webcraft-woad.vercel.app/" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >Webcraft</a>
+</p>
           <p className="rera-text">RERA Reg:</p>
         </div>
       </div>
