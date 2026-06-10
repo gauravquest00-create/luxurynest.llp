@@ -64,7 +64,7 @@ export default function Footer() {
               )}
               <p className="brand-name">{siteConfig.businessName}</p>
             </div>
-            <p className="brand-description">{siteConfig.description}</p>
+            
             <div className="social-icons">
               <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer" className="social-icon">
                 <InstagramIcon />
