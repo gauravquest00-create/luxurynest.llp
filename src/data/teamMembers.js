@@ -9,7 +9,7 @@ const teamMembers = [
     image: "/SandeepGoyal.jpeg",
 
 
-    bio: "Sandeep Goyal has over 8 years of experience in residential and commercial real estate, including plots and builder floors. He has served more than 400+ buyers and investors, with a special focus on helping families find their dream homes. Known for his trusted guidance and commitment to fair value, he helps every client find the right property—whether a home, plot, builder floor, or commercial space—at the right price",
+    bio: "Sandeep Goyal has over 8 years of experience in residential and commercial real estate, helping clients navigate property decisions with confidence and clarity. Having worked with a wide range of homebuyers and investors, he is known for delivering thoughtful guidance, market expertise, and a client-first approach. With a strong commitment to transparency and long-term value",
   },
 
   {
