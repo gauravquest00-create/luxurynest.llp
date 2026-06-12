@@ -166,22 +166,32 @@ export default function Construction() {
   };
 
   // Submit to Google Sheet
-  const submitToSheet = async (payload) => {
-    setIsSubmitting(true);
-    try {
-      const response = await fetch(APPS_SCRIPT_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(payload).toString(),
-      });
-      const result = await response.json();
-      console.log('Construction lead submitted:', result);
-    } catch (error) {
-      console.error('Error submitting construction lead:', error);
-    } finally {
-      setIsSubmitting(false);
+const submitToSheet = async (payload) => {
+  setIsSubmitting(true);
+  setError('');
+  try {
+    const response = await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(payload).toString(),
+    });
+    const result = await response.json();
+    console.log('✅ Server response:', result);
+    
+    if (result.status !== 'success') {
+      throw new Error(result.message || 'Unknown error');
     }
-  };
+    
+    return result;
+    
+  } catch (error) {
+    
+    setError('Failed to submit. Please try again or contact us directly.');
+    throw error;
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   const handleSubmit = async (e) => {
     e.preventDefault();
