@@ -217,32 +217,25 @@ const submitToSheet = async (payload) => {
       return;
     }
 
-    await submitToSheet({
-      type: 'construction_enquiry',
-      name: formData.name.trim(),
-      email: formData.email.trim(),
-      phone: formData.phone.replace(/\D/g, ''),
-      serviceType: formData.serviceType,
-      plotSize: `${formData.plotSize} ${formData.plotUnit}`,
-      plotSizeSqft: priceEstimate.areaSqft,
-      floors: formData.floors,
-      totalArea: priceEstimate.totalArea,
-      materialType: formData.materialType,
-      priceEstimateMin: priceEstimate.minPrice,
-      priceEstimateMax: priceEstimate.maxPrice,
-      location: formData.location,
-      message: formData.message,
-      source: 'Construction Page',
-      timestamp: new Date().toISOString()
-    });
-
-    setShowThankYou(true);
-    setShowForm(false);
-
-    setTimeout(() => {
-      navigate('/');
-    }, 3000);
-  };
+ 
+await submitToSheet({
+  type: 'construction_enquiry', 
+  name: formData.name.trim(),
+  email: formData.email.trim(),
+  phone: formData.phone.replace(/\D/g, ''),
+  serviceType: formData.serviceType,
+  plotSize: `${formData.plotSize} ${formData.plotUnit}`,
+  plotSizeSqft: priceEstimate.areaSqft,
+  floors: formData.floors,
+  totalArea: priceEstimate.totalArea,
+  materialType: formData.materialType,
+  priceEstimateMin: priceEstimate.minPrice,
+  priceEstimateMax: priceEstimate.maxPrice,
+  location: formData.location,
+  message: formData.message,
+  source: 'Construction Page',
+  timestamp: new Date().toISOString()
+});
 
   const handleReset = () => {
     setShowForm(false);
