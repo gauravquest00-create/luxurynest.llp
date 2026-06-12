@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BackButton from '../components/common/BackButton';
 
-// Google Apps Script URL (same as other forms)
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzfUjjzesY9GgcONjMCwTVOEN-QaYjm4qbKv3e9mEC2khUR6cWMz4xdyV8bgWb1J7Q3/exec';
+// Google Apps Script URL - UPDATE THIS AFTER DEPLOYING NEW SCRIPT
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_NEW_SCRIPT_ID/exec';
 
 // Validation helpers
 const isValidMobile = (phone) => {
@@ -60,7 +60,7 @@ export default function Construction() {
       icon: "🔑",
       shortDesc: "Ready to move construction with interior",
       description: "Complete home from foundation to finishing - just bring your luggage and move in! Everything is included from structure to interior.",
-      includes: ["Civil Structure", "Plumbing", "Electrical","Facade Ready", "Interior Design", "Modular Kitchen", "False Ceiling", "Woodwork", "Entire Paints/Texture", "Bathroom Fittings"],
+      includes: ["Civil Structure", "Plumbing", "Electrical", "Facade Ready", "Interior Design", "Modular Kitchen", "False Ceiling", "Woodwork", "Entire Paints/Texture", "Bathroom Fittings"],
       excludes: ["Interior Rates Depends on Requirement"],
       priceNote: "⚠️ NOTE: The estimated price is for Basic Civil Construction. Interior cost depends on your specific requirements, design choices, and material preferences. Final interior cost will be shared after detailed discussion."
     },
@@ -70,8 +70,8 @@ export default function Construction() {
       icon: "🏠",
       shortDesc: "Upgrade from civil - Basic structure ready",
       description: "Basic structure is ready with plaster. You need finishing work including flooring, painting, bathroom fittings, and interiors.",
-      includes: ["Basic Structure Ready", "Plaster Done", "Flooring", "Paint Works", "Bathroom Fitting","Electrical Fitting"],
-      excludes: ["Interior Designs","Furniture", "Appliances", "Electronics"],
+      includes: ["Basic Structure Ready", "Plaster Done", "Flooring", "Paint Works", "Bathroom Fitting", "Electrical Fitting"],
+      excludes: ["Interior Designs", "Furniture", "Appliances", "Electronics"],
       priceNote: "Upgrade cost depends on the finishing quality and materials you choose."
     }
   ];
@@ -166,42 +166,42 @@ export default function Construction() {
   };
 
   // Submit to Google Sheet
-// Debug version - shows more details
-const submitToSheet = async (payload) => {
-  setIsSubmitting(true);
-  setError('');
-  
-  console.log('🚀 Sending payload:', payload);
-  
-  try {
-    const response = await fetch(APPS_SCRIPT_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(payload).toString(),
-    });
+  const submitToSheet = async (payload) => {
+    setIsSubmitting(true);
+    setError('');
     
-    console.log('📡 Response status:', response.status);
-    
-    const result = await response.json();
-    console.log('✅ Server response:', result);
-    
-    if (result.status !== 'success') {
-      throw new Error(result.message || 'Unknown error');
+    try {
+      console.log('🚀 Sending payload:', payload);
+      
+      const response = await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(payload).toString(),
+      });
+      
+      );
+      
+      const result = await response.json();
+      
+      
+      if (result.status !== 'success') {
+        throw new Error(result.message || 'Unknown error');
+      }
+      
+      return result;
+      
+    } catch (error) {
+      console.error('❌ Submission error:', error);
+      throw error;
+    } finally {
+      setIsSubmitting(false);
     }
-    
-    return result;
-    
-  } catch (error) {
-    console.error('❌ Submission error:', error);
-    setError('Failed to submit. Please try again or contact us directly.');
-    throw error;
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Validation
     if (!isValidName(formData.name)) {
       setError('Name must be at least 2 letters');
       return;
@@ -223,25 +223,40 @@ const submitToSheet = async (payload) => {
       return;
     }
 
- 
-await submitToSheet({
-  type: 'construction_enquiry', 
-  name: formData.name.trim(),
-  email: formData.email.trim(),
-  phone: formData.phone.replace(/\D/g, ''),
-  serviceType: formData.serviceType,
-  plotSize: `${formData.plotSize} ${formData.plotUnit}`,
-  plotSizeSqft: priceEstimate.areaSqft,
-  floors: formData.floors,
-  totalArea: priceEstimate.totalArea,
-  materialType: formData.materialType,
-  priceEstimateMin: priceEstimate.minPrice,
-  priceEstimateMax: priceEstimate.maxPrice,
-  location: formData.location,
-  message: formData.message,
-  source: 'Construction Page',
-  timestamp: new Date().toISOString()
-});
+    try {
+      const payload = {
+        type: 'construction_enquiry',
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.replace(/\D/g, ''),
+        serviceType: formData.serviceType,
+        plotSize: `${formData.plotSize} ${formData.plotUnit}`,
+        plotSizeSqft: priceEstimate.areaSqft.toString(),
+        floors: formData.floors,
+        totalArea: priceEstimate.totalArea.toString(),
+        materialType: formData.materialType === 'primary' ? 'Primary Material' : 'Secondary Material',
+        priceEstimateMin: priceEstimate.minPrice.toString(),
+        priceEstimateMax: priceEstimate.maxPrice.toString(),
+        location: formData.location,
+        message: formData.message,
+        source: 'Construction Page',
+        timestamp: new Date().toISOString()
+      };
+      
+      await submitToSheet(payload);
+      
+      setShowThankYou(true);
+      setShowForm(false);
+      
+      // Redirect to home after 3 seconds
+      setTimeout(() => {
+        navigate('/');
+      }, 3000);
+      
+    } catch (error) {
+      setError('Something went wrong. Please try again or contact us directly.');
+    }
+  };
 
   const handleReset = () => {
     setShowForm(false);
@@ -693,7 +708,18 @@ await submitToSheet({
                 />
               </div>
 
-              {error && <p style={{ color: '#ef4444', fontSize: '0.875rem', marginBottom: '1rem' }}>{error}</p>}
+              {error && (
+                <div style={{
+                  backgroundColor: '#fee2e2',
+                  color: '#dc2626',
+                  padding: '0.75rem',
+                  borderRadius: '0.5rem',
+                  marginBottom: '1rem',
+                  fontSize: '0.85rem'
+                }}>
+                  {error}
+                </div>
+              )}
 
               <button
                 type="submit"
@@ -701,14 +727,16 @@ await submitToSheet({
                 style={{
                   width: '100%',
                   padding: '0.75rem',
-                  backgroundColor: '#1e3a8a',
-                  color: 'white',
+                  backgroundColor: '#D4AF37',
+                  color: '#1F3556',
                   fontWeight: 'bold',
                   border: 'none',
                   borderRadius: '0.5rem',
                   cursor: isSubmitting ? 'not-allowed' : 'pointer',
                   opacity: isSubmitting ? 0.7 : 1
                 }}
+                onMouseEnter={(e) => !isSubmitting && (e.currentTarget.style.backgroundColor = '#B8962C')}
+                onMouseLeave={(e) => !isSubmitting && (e.currentTarget.style.backgroundColor = '#D4AF37')}
               >
                 {isSubmitting ? 'Submitting...' : 'Submit Construction Request →'}
               </button>
