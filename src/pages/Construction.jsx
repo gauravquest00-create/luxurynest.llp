@@ -166,9 +166,9 @@ export default function Construction() {
   };
 
   // Submit to Google Sheet
+// Submit to Google Sheet
 const submitToSheet = async (payload) => {
   setIsSubmitting(true);
-  setError('');
   try {
     const response = await fetch(APPS_SCRIPT_URL, {
       method: 'POST',
@@ -176,18 +176,9 @@ const submitToSheet = async (payload) => {
       body: new URLSearchParams(payload).toString(),
     });
     const result = await response.json();
-    console.log('✅ Server response:', result);
-    
-    if (result.status !== 'success') {
-      throw new Error(result.message || 'Unknown error');
-    }
-    
-    return result;
-    
+    console.log('Construction lead submitted:', result);
   } catch (error) {
-    
-    setError('Failed to submit. Please try again or contact us directly.');
-    throw error;
+    console.error('Error submitting construction lead:', error);
   } finally {
     setIsSubmitting(false);
   }
