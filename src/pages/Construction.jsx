@@ -182,7 +182,7 @@ export default function Construction() {
       console.log('📡 Response status:', response.status);
       
       const result = await response.json();
-      console.log('✅ Server response:', result);
+      
       
       if (result.status !== 'success') {
         throw new Error(result.message || 'Unknown error');
