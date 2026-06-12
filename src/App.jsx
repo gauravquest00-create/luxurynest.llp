@@ -1,6 +1,7 @@
 // src/App.jsx
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { Analytics } from '@vercel/analytics/react'; // ✅ ADDED - Vercel Analytics
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import WhatsAppButton from "./components/common/WhatsAppButton";
@@ -14,8 +15,6 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import NewLaunches from "./pages/NewLaunches";
 import Construction from "./pages/Construction";  
-
-
 
 // Inner component that uses useLocation (must be inside BrowserRouter)
 function AppContent() {
@@ -44,7 +43,6 @@ function AppContent() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/new-launches" element={<NewLaunches />} />
         <Route path="/construction" element={<Construction />} />  
-
         
         {/* 404 Route - Catch all unmatched routes */}
         <Route path="*" element={<NotFound />} />
@@ -58,6 +56,7 @@ function AppContent() {
 export default function App() {
   return (
     <BrowserRouter>
+      <Analytics /> {/* ✅ ADDED - This enables tracking */}
       <AppContent />
     </BrowserRouter>
   );
