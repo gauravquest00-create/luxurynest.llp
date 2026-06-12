@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import BackButton from '../components/common/BackButton';
 
 // Google Apps Script URL - UPDATE THIS AFTER DEPLOYING NEW SCRIPT
-const APPS_SCRIPT_URL = https://script.google.com/macros/s/AKfycbwc-VqqmpHU8qCzFKeAok-iMhFs1YvgRz8hf7MqlbcPEsQJqN_SN4hOKve-1a3eYhNt/exec
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwc-VqqmpHU8qCzFKeAok-iMhFs1YvgRz8hf7MqlbcPEsQJqN_SN4hOKve-1a3eYhNt/exec';
 
 // Validation helpers
 const isValidMobile = (phone) => {
