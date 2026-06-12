@@ -59,35 +59,44 @@ export default function NewLaunches() {
   };
 
   // Submit to Google Sheet
-  const submitToSheet = async (payload) => {
-    setIsSubmitting(true);
-    setError('');
-    
-    try {
-      console.log('Submitting to sheet:', payload);
-      
-      const response = await fetch(APPS_SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors', // Important for Google Apps Script
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams(payload).toString()
-      });
-      
-      console.log('Response received:', response);
-      
-      // Since no-cors doesn't give response data, assume success
-      return { status: 'success' };
-      
-    } catch (error) {
-      console.error('Error submitting to sheet:', error);
-      throw error;
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
+const submitToSheet = async (payload) => {
+  setIsSubmitting(true);
+  setError('');
+  
+  try {
+    console.log('Submitting to sheet:', payload);
+    
+    // ❌ Remove 'mode: "no-cors"' - this hides errors
+    const response = await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams(payload).toString()
+    });
+    
+    // ✅ Check if response is OK
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const result = await response.json();
+    console.log('Sheet response:', result);
+    
+    if (result.status === 'success') {
+      return { status: 'success' };
+    } else {
+      throw new Error(result.message || 'Unknown error from sheet');
+    }
+    
+  } catch (error) {
+    console.error('Error submitting to sheet:', error);
+    throw error; // Re-throw to be caught in handleSubmit
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   const handleSubmit = async (e) => {
     e.preventDefault();
     
