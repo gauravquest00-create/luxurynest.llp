@@ -124,18 +124,16 @@ const submitToSheet = async (payload) => {
 
     try {
       // Prepare payload for Google Sheet
-      const payload = {
-        type: 'new_launch_enquiry',
-        name: formData.name.trim(),
-        email: formData.email.trim(),
-        phone: formData.phone.replace(/\D/g, ''),
-        lookingFor: formData.lookingFor === 'residential' ? 'Residential' : 'Commercial',
-        location: formData.location.trim(),
-        budget: formData.budget,
-        source: 'New Launches Page',
-        timestamp: new Date().toISOString(),
-        formType: 'New Launch Enquiry'
-      };
+    const payload = {
+  type: 'enquiry',  //  'new_launch_enquiry'
+  name: formData.name.trim(),
+  email: formData.email.trim(),
+  phone: formData.phone.replace(/\D/g, ''),
+  message: `New Launch Enquiry - Looking for: ${formData.lookingFor}, Location: ${formData.location.trim()}, Budget: ${formData.budget}`,
+  property: 'New Launch Project',
+  propertyId: '',
+  source: 'New Launches Page'
+};
       
       await submitToSheet(payload);
       
